@@ -1,5 +1,5 @@
-# modularity-login-form
-Contact module for modularity
+# modularity-contact-banner
+Contact Banner module for modularity
 
 ## Getting Started
 Get the latest version and follow the installation steps bellow.
@@ -34,11 +34,12 @@ Settings
 
 ## Releases
 
-https://github.com/helsingborg-stad/modularity-contact/releases
+https://github.com/helsingborg-stad/modularity-contact-banner/releases
 
 ## Authors
 
 * **Sebastian Thulin**
+* **Dan Nilsson**
 
 
 ## License
