@@ -1,14 +1,31 @@
-
-.c-contact-banner .container { 
-    margin-bottom: 30px;
-}
-
 .c-contact-banner {
+    padding: 70px 0;
+    color: #fff; 
+    background-color: #cb0050;
+    background: linear-gradient(100deg, rgba(#cb0050, 1) 0%, rgba(#fa1a74,1) 100%);
+
+    &__heading {
+        font-size: 2.5em; 
+    }
+
+    &__heading + &__preamble {
+        margin-top: 10px;
+    }
+
+    &__preamble {
+        font-size: 1.2em;
+        max-width: 500px;
+        line-height: 1.5em;
+    }
 
     &__items {
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(#000, .2);
         display: flex;
-        border: 1px solid #999;
-        border-radius: 3px;     
+        flex-basis: 25%;
+        border-radius: 3px;   
+        overflow: hidden;  
+        margin-top: 60px;
     }
 
     i {
@@ -17,11 +34,13 @@
 
     &__item {
         display: block;
-        padding: 30px 30px; 
+        padding: 30px; 
+        color: #000;
+        flex-basis: 25%;
     }
 
-    &__item+&__item {
-        border-left: 1px solid #999;
+    &__item + &__item {
+        border-left: 1px solid #eee;
     }
 
     &__item h3 {
@@ -34,5 +53,62 @@
 
     &__item p {
         font-size: 1.1em;
+    }
+
+    &__info {
+        font-weight: bold;
+        padding: 20px 0;
+        display: block;
+        font-size: 1.1em;
+        float: right;
+        color: #fff;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:after {
+            content: " >";
+            padding-left: 0;
+            transition: all 200ms;
+        }
+
+        &:hover:after {
+            padding-left: 10px;
+        }
+    }
+
+    &__hours {
+        font-size: 1.1em;
+        padding-left: 20px; 
+        border-left: 4px solid rgba(#fff,.8);
+
+        h3, ul, div + h3, ul, div {
+            margin-top: 10px;
+        }
+    }
+
+    .c-contact-banner__hours-exceptions {
+        line-height: 1.1em;
+    }
+
+    .c-contact-banner__hours-time {
+        padding-left: 10px;
+        display: inline-block;
+    }
+
+    .c-contact-banner__cta {
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+        cursor: pointer;
+        line-height: 1;
+        font-weight: 700;
+        background-color: transparent;
+        letter-spacing: .1em;
+
+        &:hover {
+            background-color: #eee;
+        }
     }
 }
