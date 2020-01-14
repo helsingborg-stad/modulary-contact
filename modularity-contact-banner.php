@@ -55,9 +55,3 @@ add_action('plugins_loaded', function() {
         );
     }
 });
-
-// Add module template dir
-// add_filter('Modularity/Module/TemplatePath', function ($paths) {
-//     $paths[] = MODULARITYCONTACTBANNER_PATH . 'source/php/Module/views/';
-//     return $paths;
-// });
