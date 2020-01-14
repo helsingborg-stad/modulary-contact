@@ -2,35 +2,32 @@
 
 namespace ModularityContact\Module;
 
+use ModularityContact\Helper\CacheBust;
+
 /**
- * Class LoginForm
+ * Class ContactBanner
  * @package ModularityContact\Module
  */
 class ContactBanner extends \Modularity\Module
 {
     public $slug = 'ContactBanner';
     public $supports = array();
-    public $react = false;
 
-    /**
-     * Init
-     */
     public function init()
     {
         $this->nameSingular = __("Contact banner", 'modularity-contact');
-        $this->namePlural = __("Contact banner", 'modularity-contact');
+        $this->namePlural = __("Contact banners", 'modularity-contact');
         $this->description = __("Banner displaying contact details", 'modularity-contact');
-    
-        wp_register_style('modularity-contact-banner-css', MODULARITYCONTACT_URL . '/dist/' . \ModularityContact\Helper\CacheBust::name('css/modularity-contact-banner.css'));
-        wp_enqueue_style('modularity-contact-banner-css');
-    
+
+        // wp_register_style(
+        //     'modularity-contact-banner-css',
+        //     MODULARITYCONTACT_URL . '/dist/' . CacheBust::name('css/modularity-contact-banner.css')
+        // );
+        // wp_enqueue_style('modularity-contact-banner-css');
     }
-
-
 
     /**
      * Data array
-     *
      * @return array $data
      */
     public function data() : array
@@ -41,7 +38,6 @@ class ContactBanner extends \Modularity\Module
 
     /**
      * Blade Template
-     *
      * @return string
      */
     public function template() : string
@@ -49,88 +45,17 @@ class ContactBanner extends \Modularity\Module
         return "contact-banner.blade.php";
     }
 
-
-    /**
-     * Enqueue required scripts
-     * @return void
-     */
-    public function registerScripts()
-    {
-        //wp_register_script('modularity-contact-js', MODULARITYCONTACT_URL . '/dist/' . \ModularityContact\Helper\CacheBust::name('js/modularity-contact.js'), array('react', 'react-dom'));
-    }
-
-    /**
-     * Adding javaScript and Localize to make variables available in dom
-     *
-     * @return string || void
-     */
-    public function script()
-    {
-        //Check if modularity is compatible.
-        /*if (!class_exists('\Modularity\Helper\React')) {
-            error_log("Modularity Login form cannot run. This plugin requires modularity version 2.11.0 or higher.");
-            return;
-        }
-
-        (!class_exists('\Modularity\Helper\React')) ? \Modularity\Helper\React::enqueue() : \ModularityLoginForm\Helper\React::enqueue();
-
-        wp_enqueue_script('modularity-contact-js');
-        wp_localize_script('modularity-contact-js', 'ModularityLoginFormObject', $this->scriptData());*/ 
-    }
-
-
-    /**
-     * Setting all variables for localize script
-     *
-     * @return array with data
-     */
-    public function scriptData()
-    {
-        $token = get_field_object('mod_login_form_api_token', $this->data['ID']);
-        $page = get_field_object('mod_login_to_page', $this->data['ID']);
-
-        $data = array();
-        $data['moduleId'] = $this->data['ID'];
-        $data['token'] = \ModularityLoginForm\App::encrypt($this->data, $token['value']);
-        $data['page'] = \ModularityLoginForm\App::encrypt($this->data, $page['value']);
-
-        if ( is_user_logged_in() ) {
-            $currentUser = wp_get_current_user();
-            if ($currentUser->user_firstname && $currentUser->user_lastname){
-                $data['fullusername'] = $currentUser->user_firstname . " " . $currentUser->user_lastname;
-            } else {
-                $data['fullusername'] = $currentUser->display_name;
-            }
-
-        }
-
-        //Translation strings
-        $data['translation'] = array(
-            'title' => __('Modularity Login Form', 'modularity-contact'),
-            'username' => __('Username or E-mail', 'modularity-contact'),
-            'password' => __('Password', 'modularity-contact'),
-            'forgotpasswd' => __('Forgot password?', 'modularity-contact'),
-            'loggedIn' => __('You are logged in as: ', 'modularity-contact'),
-            'loginbtn' => __('Login', 'modularity-contact'),
-            'logoutbtn' => __('Logout', 'modularity-contact'),
-            'welcome' => __('Welcome', 'modularity-contact'),
-            'prepareLogout' => __(' Please wait, logging out from the system.', 'modularity-contact'),
-            'prepareLogin' => __(' Please wait, while the system redirect you to your account.', 'modularity-contact'),
-        );
-
-        //Send to script
-        return $data;
-    }
-
     /**
      * Style - Register & adding css
-     *
      * @return void
      */
-    public function style()
+    public function style() : void
     {
-        die("hejk"); 
-        wp_register_style('modularity-contact-banner-css', MODULARITYCONTACT_URL . '/dist/' . \ModularityContact\Helper\CacheBust::name('css/modularity-contact-banner.css'));
+        echo '<pre>' . print_r('HEPP', 1) . '</pre>';
+        wp_register_style(
+            'modularity-contact-banner-css',
+            MODULARITYCONTACT_URL . '/dist/' . CacheBust::name('css/modularity-contact-banner.css')
+        );
         wp_enqueue_style('modularity-contact-banner-css');
     }
 

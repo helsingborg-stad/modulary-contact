@@ -33,15 +33,13 @@
     ); 
 
     $timeDetails = ""; 
-
     $mainContent = ""; 
-
 ?>
 
 <div class="c-contact-banner">
     <div class="container">
         <div class="grid">
-            
+
             <div class="grid-xs-8">
                 <h2 class="c-typography c-typography__variant--h2">
                     <span class="c-typography__inner">Kontakta kommunen - En väg in</span>
@@ -55,7 +53,6 @@
                 <h3 class="c-typography c-typography__variant--h5">
                     <span class="c-typography__inner">Kontakta kommunen - En väg in</span>
                 </h3>
-
                 <ul class="c-listing u-unlist">
                     <li class="c-listing__item c-listing__item-0">
                         <span class="c-listing__label">This is a list label for item 1</span>
@@ -68,17 +65,14 @@
 
             <div class="grid-xs-12">
                 <div class="c-contact-banner__items">
-
                     @foreach ($items as $item)
                         <div class="c-contact-banner__item">
                             <div class="c-contact-banner__icon-wrapper">
-                                <i class="c-icon c-icon--color- c-icon--size-inherit material-icons">chat</i>
+                                <i class="c-icon c-icon--color c-icon--size-inherit material-icons">chat</i>
                             </div>
-
                             <h3 class="c-typography c-typography__variant--h2">
-                            <span class="c-typography__inner">Chatta</span>
+                                <span class="c-typography__inner">Chatta</span>
                             </h3>
-
                             <p class="c-typography u-small c-typography__variant--p">
                                 <span class="c-typography__inner">Få svar direkt - chatta med en kommunvägledare.</span>
                             </p>

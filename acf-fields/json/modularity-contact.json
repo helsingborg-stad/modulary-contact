@@ -1,0 +1,43 @@
+[{
+    "key": "group_5e1d8f163f200",
+    "title": "Modularity Contact",
+    "fields": [
+        {
+            "key": "field_5e1d90c31ee10",
+            "label": "Main content",
+            "name": "main_content",
+            "type": "wysiwyg",
+            "instructions": "Add your content here",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "mod-contactbanner"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+}]
+
