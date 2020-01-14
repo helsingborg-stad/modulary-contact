@@ -1,11 +1,11 @@
 [{
     "key": "group_5e1d8f163f200",
-    "title": "Modularity Contact",
+    "title": "Modularity Contact Banner",
     "fields": [
         {
             "key": "field_5e1d90c31ee10",
             "label": "Main content",
-            "name": "main_content",
+            "name": "mod_contactbanner_main_content",
             "type": "wysiwyg",
             "instructions": "Add your content here",
             "required": 0,
@@ -27,7 +27,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "mod-contactbanner"
+                "value": "mod-contact-banner"
             }
         ]
     ],

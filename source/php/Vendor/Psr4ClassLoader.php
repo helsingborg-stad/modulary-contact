@@ -1,6 +1,6 @@
 <?php
 
-namespace ModularityContact\Vendor;
+namespace ModularityContactBanner\Vendor;
 
 /**
  * A PSR-4 compatible class loader.

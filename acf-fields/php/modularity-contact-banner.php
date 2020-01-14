@@ -3,14 +3,14 @@
 if (function_exists('acf_add_local_field_group')) {
     acf_add_local_field_group(array(
     'key' => 'group_5e1d8f163f200',
-    'title' => __('Modularity Contact', 'modularity-contact'),
+    'title' => __('Modularity Contact Banner', 'modularity-contact-banner'),
     'fields' => array(
         0 => array(
             'key' => 'field_5e1d90c31ee10',
-            'label' => __('Main content', 'modularity-contact'),
-            'name' => 'main_content',
+            'label' => __('Main content', 'modularity-contact-banner'),
+            'name' => 'mod_contactbanner_main_content',
             'type' => 'wysiwyg',
-            'instructions' => __('Add your content here', 'modularity-contact'),
+            'instructions' => __('Add your content here', 'modularity-contact-banner'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -30,7 +30,7 @@
             0 => array(
                 'param' => 'post_type',
                 'operator' => '==',
-                'value' => 'mod-contactbanner',
+                'value' => 'mod-contact-banner',
             ),
         ),
     ),

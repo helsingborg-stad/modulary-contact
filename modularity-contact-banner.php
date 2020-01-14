@@ -33,7 +33,7 @@ $loader->addPrefix('ModularityContactBanner', MODULARITYCONTACTBANNER_PATH . 'so
 $loader->register();
 
 // Start application
-new ModularityContact\App();
+new ModularityContactBanner\App();
 
 // Acf auto import and export
 add_action('plugins_loaded', function() {

@@ -10,7 +10,7 @@ use ModularityContactBanner\Helper\CacheBust;
  */
 class ContactBanner extends \Modularity\Module
 {
-    public $slug = 'ContactBanner';
+    public $slug = 'contact-banner';
     public $supports = array();
 
     public function init()
@@ -18,12 +18,6 @@ class ContactBanner extends \Modularity\Module
         $this->nameSingular = __("Contact banner", 'modularity-contact');
         $this->namePlural = __("Contact banners", 'modularity-contact');
         $this->description = __("Banner displaying contact details", 'modularity-contact');
-
-        // wp_register_style(
-        //     'modularity-contact-banner-css',
-        //     MODULARITYCONTACT_URL . '/dist/' . CacheBust::name('css/modularity-contact-banner.css')
-        // );
-        // wp_enqueue_style('modularity-contact-banner-css');
     }
 
     /**
@@ -53,7 +47,7 @@ class ContactBanner extends \Modularity\Module
     {
         wp_register_style(
             'modularity-contact-banner-css',
-            MODULARITYCONTACT_URL . '/dist/' . CacheBust::name('css/modularity-contact-banner.css')
+            MODULARITYCONTACTBANNER_URL . '/dist/' . CacheBust::name('css/modularity-contact-banner.css')
         );
         wp_enqueue_style('modularity-contact-banner-css');
     }
