@@ -27,6 +27,11 @@ class ContactBanner extends \Modularity\Module
     public function data() : array
     {
         $data = array();
+
+        $data['mainContent'] = get_field('mod_contactbanner_main_content', $this->ID);
+
+        var_dump($data);
+
         return $data;
     }
 
