@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Modularity Login Form\n"
+"POT-Creation-Date: 2019-01-22 13:38+0100\n"
+"PO-Revision-Date: 2019-01-22 13:39+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: modularity-login-form.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Plugin Name of the plugin/theme
+#: acf-fields/php/modularity-form-login.php:6
+#: source/php/Module/LoginForm.php:105
+msgid "Modularity Login Form"
+msgstr "Modularity inloggningsformulär"
+
+#: acf-fields/php/modularity-form-login.php:10
+msgid "Mod Login to page"
+msgstr "Hänvisningssida"
+
+#: acf-fields/php/modularity-form-login.php:13
+msgid "The page the login form transfer user to"
+msgstr "Sidan dit den inloggade användaren loggas in till."
+
+#: acf-fields/php/modularity-form-login.php:31
+msgid "Api encryption salt"
+msgstr "API Krypterings salt"
+
+#: acf-fields/php/modularity-form-login.php:34
+msgid "Disabled. Salt is automatically generated when you save this setting."
+msgstr ""
+"Redigering är inaktiverad. Saltet genereras automatiskt när du sparar den "
+"här sidan."
+
+#: acf-fields/php/modularity-form-login.php:43
+msgid "Generates automatically"
+msgstr "Genereras automatiskt"
+
+#: acf-fields/php/modularity-form-login.php:51
+msgid "Api encryption key"
+msgstr "API krypterings-nyckel"
+
+#: acf-fields/php/modularity-form-login.php:54
+#: acf-fields/php/modularity-form-login.php:74
+msgid "Disabled. Key is automatically generated when you save this setting."
+msgstr ""
+"Redigering är inaktiverad. Nyckeln genereras automatiskt när du sparar den "
+"här sidan."
+
+#: acf-fields/php/modularity-form-login.php:63
+#: acf-fields/php/modularity-form-login.php:83
+msgid "Generates automaticly"
+msgstr "Genereras automatiskt"
+
+#: acf-fields/php/modularity-form-login.php:71
+msgid "Api token"
+msgstr "API Token"
+
+#: source/php/Api/Authentication.php:73 source/php/Api/Authentication.php:164
+msgid ""
+"Token error!!!! Please provide one in the modularity login form settings."
+msgstr ""
+"Rätt token saknas! Uppdatera Modulens inställningar, för att generera nya "
+"nycklar."
+
+#: source/php/Api/Authentication.php:109
+msgid "Login successful."
+msgstr "Inloggningen lyckades"
+
+#: source/php/Api/Authentication.php:125
+msgid "The username and password you provided did not match."
+msgstr "Användarnamn och lösenord matchar inte mot någon i vårt system."
+
+#: source/php/Api/Authentication.php:133
+msgid "The username or email that you provided does not exists."
+msgstr ""
+"Det finns ingen användare med den kombination du angivit.\n"
+"Skriv in rätt användarnamn och lösenord."
+
+#: source/php/Api/Authentication.php:141
+msgid "You have to provide both email and password."
+msgstr "Du måste ange anvädarnamn eller E-post adress och lösenord."
+
+#: source/php/Api/Authentication.php:172
+msgid "You have now logged out."
+msgstr "Du har nu loggat ut"
+
+#: source/php/Module/LoginForm.php:20
+msgid "Login form"
+msgstr "Inloggningsformulär"
+
+#: source/php/Module/LoginForm.php:21
+msgid "Login forms"
+msgstr "Inloggningsformulär"
+
+#: source/php/Module/LoginForm.php:22
+msgid "Front end login"
+msgstr ""
+
+#: source/php/Module/LoginForm.php:106
+msgid "Username or E-mail"
+msgstr "Användarnamn / E-post"
+
+#: source/php/Module/LoginForm.php:107
+msgid "Password"
+msgstr "Lösenord"
+
+#: source/php/Module/LoginForm.php:108
+msgid "Forgot password?"
+msgstr "Glömt lösenord?"
+
+#: source/php/Module/LoginForm.php:109
+msgid "You are logged in as: "
+msgstr "Du är inloggad som "
+
+#: source/php/Module/LoginForm.php:110
+msgid "Login"
+msgstr "Logga in"
+
+#: source/php/Module/LoginForm.php:111
+msgid "Logout"
+msgstr "Logga ut"
+
+#: source/php/Module/LoginForm.php:112
+msgid "Welcome"
+msgstr "Välkommen"
+
+#: source/php/Module/LoginForm.php:113
+msgid " Please wait, logging out from the system."
+msgstr "Vänligen vänta, loggar ut från systemet."
+
+#: source/php/Module/LoginForm.php:114
+msgid " Please wait, while the system redirect you to your account."
+msgstr "Vänligen vänta, medan systemet omdirigerar dig till ditt konto."
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/helsingborg-stad/modularity-login-form"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Front End login form"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Johan Silvergrund && Sebastian Thulin"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://helsingborg.se"
+msgstr ""

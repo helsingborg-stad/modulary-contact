@@ -1,0 +1,38 @@
+
+.c-contact-banner .container { 
+    margin-bottom: 30px;
+}
+
+.c-contact-banner {
+
+    &__items {
+        display: flex;
+        border: 1px solid #999;
+        border-radius: 3px;     
+    }
+
+    i {
+        display: none; 
+    }
+
+    &__item {
+        display: block;
+        padding: 30px 30px; 
+    }
+
+    &__item+&__item {
+        border-left: 1px solid #999;
+    }
+
+    &__item h3 {
+        padding-bottom: 15px;
+    }
+
+    &__item h3 span {
+        font-size: 1.3em;
+    }
+
+    &__item p {
+        font-size: 1.1em;
+    }
+}
