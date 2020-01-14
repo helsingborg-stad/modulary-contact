@@ -1,5 +1,5 @@
 {
-  "name": "modularity-contact",
+  "name": "modularity-contact-banner",
   "version": "1.0.0",
   "description": "Contact Banner",
   "main": "",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:helsingborg-stad/modularity-contact.git"
+    "url": "git@github.com:helsingborg-stad/modularity-contact-banner.git"
   },
   "author": "Sebastian Thulin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/helsingborg-stad/modularity-contact/issues"
+    "url": "https://github.com/helsingborg-stad/modularity-contact-banner/issues"
   },
-  "homepage": "https://github.com/helsingborg-stad/modularity-contact",
+  "homepage": "https://github.com/helsingborg-stad/modularity-contact-banner",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^3.1.0",

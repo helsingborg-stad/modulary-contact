@@ -14,24 +14,22 @@
  */
 
 // Protect agains direct file access
-if (!defined('WPINC')) {
-    die;
-}
+if (!defined('WPINC')) die;
 
-define('MODULARITYCONTACT_PATH', plugin_dir_path(__FILE__));
-define('MODULARITYCONTACT_URL', plugins_url('', __FILE__));
-define('MODULARITYCONTACT_TEMPLATE_PATH', MODULARITYCONTACT_PATH . 'templates/');
-define('MODULARITYCONTACT_MODULE_PATH', MODULARITYCONTACT_PATH . 'source/php/Module/');
+define('MODULARITYCONTACTBANNER_PATH', plugin_dir_path(__FILE__));
+define('MODULARITYCONTACTBANNER_URL', plugins_url('', __FILE__));
+define('MODULARITYCONTACTBANNER_TEMPLATE_PATH', MODULARITYCONTACTBANNER_PATH . 'templates/');
+define('MODULARITYCONTACTBANNER_MODULE_PATH', MODULARITYCONTACTBANNER_PATH . 'source/php/Module/');
 
-load_plugin_textdomain('modularity-contact', false, plugin_basename(dirname(__FILE__)) . '/languages');
+load_plugin_textdomain('modularity-contact-banner', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
-require_once MODULARITYCONTACT_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
-require_once MODULARITYCONTACT_PATH . 'Public.php';
+require_once MODULARITYCONTACTBANNER_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
+require_once MODULARITYCONTACTBANNER_PATH . 'Public.php';
 
 // Instantiate and register the autoloader
-$loader = new ModularityContact\Vendor\Psr4ClassLoader();
-$loader->addPrefix('ModularityContact', MODULARITYCONTACT_PATH);
-$loader->addPrefix('ModularityContact', MODULARITYCONTACT_PATH . 'source/php/');
+$loader = new ModularityContactBanner\Vendor\Psr4ClassLoader();
+$loader->addPrefix('ModularityContactBanner', MODULARITYCONTACTBANNER_PATH);
+$loader->addPrefix('ModularityContactBanner', MODULARITYCONTACTBANNER_PATH . 'source/php/');
 $loader->register();
 
 // Start application
@@ -40,10 +38,10 @@ new ModularityContact\App();
 // Acf auto import and export
 add_action('plugins_loaded', function() {
     $acfExportManager = new \AcfExportManager\AcfExportManager();
-    $acfExportManager->setTextdomain('modularity-contact');
-    $acfExportManager->setExportFolder(MODULARITYCONTACT_PATH . 'acf-fields/');
+    $acfExportManager->setTextdomain('modularity-contact-banner');
+    $acfExportManager->setExportFolder(MODULARITYCONTACTBANNER_PATH . 'acf-fields/');
     $acfExportManager->autoExport(array(
-        'modularity-contact' => 'group_5e1d8f163f200',
+        'modularity-contact-banner' => 'group_5e1d8f163f200',
     ));
     $acfExportManager->import();
 });
@@ -52,7 +50,7 @@ add_action('plugins_loaded', function() {
 add_action('plugins_loaded', function() {
     if (function_exists('modularity_register_module')) {
         modularity_register_module(
-            MODULARITYCONTACT_MODULE_PATH,
+            MODULARITYCONTACTBANNER_MODULE_PATH,
             'ContactBanner'
         );
     }
@@ -60,6 +58,6 @@ add_action('plugins_loaded', function() {
 
 // Add module template dir
 // add_filter('Modularity/Module/TemplatePath', function ($paths) {
-//     $paths[] = MODULARITYCONTACT_PATH . 'source/php/Module/views/';
+//     $paths[] = MODULARITYCONTACTBANNER_PATH . 'source/php/Module/views/';
 //     return $paths;
 // });

@@ -1,6 +1,6 @@
 <?php
 
-namespace ModularityContact;
+namespace ModularityContactBanner;
 
 class App
 {

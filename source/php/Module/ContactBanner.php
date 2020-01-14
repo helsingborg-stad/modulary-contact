@@ -1,8 +1,8 @@
 <?php
 
-namespace ModularityContact\Module;
+namespace ModularityContactBanner\Module;
 
-use ModularityContact\Helper\CacheBust;
+use ModularityContactBanner\Helper\CacheBust;
 
 /**
  * Class ContactBanner
@@ -51,7 +51,6 @@ class ContactBanner extends \Modularity\Module
      */
     public function style() : void
     {
-        echo '<pre>' . print_r('HEPP', 1) . '</pre>';
         wp_register_style(
             'modularity-contact-banner-css',
             MODULARITYCONTACT_URL . '/dist/' . CacheBust::name('css/modularity-contact-banner.css')
