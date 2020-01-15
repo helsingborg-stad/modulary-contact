@@ -40,6 +40,8 @@
 
 ?>
 
+<?php $fieldNamespace = 'mod_contactbanner_'; ?>
+
 <div class="c-contact-banner">
     <div class="container">
         <div class="grid">
@@ -69,10 +71,10 @@
                                 <li class="c-contact-banner__hours-list-item-0">
                                     <span class="c-contact-banner__hours-list-label">
                                         <span class="c-contact-banner__hours-weekdays">
-                                            {{ $listItem['mod_contactbanner_weekdays'] }}
+                                            {{ $listItem[$fieldNamespace . 'weekdays'] }}
                                         </span>
                                         <span class="c-contact-banner__hours-time">
-                                            {{ $listItem['mod_contactbanner_hours_from'] }}-{{ $listItem['mod_contactbanner_hours_to'] }}
+                                            {{ $listItem[$fieldNamespace . 'hours_from'] }}-{{ $listItem[$fieldNamespace . 'hours_to'] }}
                                         </span>
                                     </span>
                                 </li>
@@ -95,7 +97,7 @@
                     @foreach ($items as $item)
                         <div class="c-contact-banner__item">
                             <div class="c-contact-banner__icon-wrapper">
-                                <i class="c-icon c-icon--color- c-icon--size-inherit material-icons">chat</i>
+                                {{!! $item->icon !!}}
                             </div>
 
                             <h3 class="c-typography c-typography__variant--h2">
