@@ -27,14 +27,21 @@ class ContactBanner extends \Modularity\Module
     public function data() : array
     {
         $data = array();
-        $id = $this->ID;
+        $postId = $this->ID;
         $fieldNamespace = 'mod_contactbanner_';
+        $data['fieldNamespace'] = $fieldNamespace;
 
-        $data['headerMainContent'] = get_the_title($id);
-        $data['mainContent'] = get_field($fieldNamespace . 'main_content', $id);
-        $data['headerBusinessHours'] = get_field($fieldNamespace . 'header_business_hours', $id);
-        $data['abnormalitiesBusinessHours'] = get_field($fieldNamespace . 'abnormalities_business_hours', $id);
-        $data['hoursList'] = get_field($fieldNamespace . 'hours_list', $id);
+        $data['headerMainContent'] = get_the_title($postId);
+        $data['mainContent'] = get_field($fieldNamespace . 'main_content', $postId);
+        $data['headerBusinessHours'] = get_field($fieldNamespace . 'header_business_hours', $postId);
+        $data['abnormalitiesBusinessHours'] = get_field($fieldNamespace . 'abnormalities_business_hours', $postId);
+        $data['hoursList'] = get_field($fieldNamespace . 'hours_list', $postId);
+        $data['ctaList'] = get_field($fieldNamespace . 'cta_list', $postId);
+
+        array_walk($data['ctaList'], function(&$item) {
+            $file = get_attached_file($item['mod_contactbanner_cta_icon'], true);
+            $item['mod_contactbanner_cta_icon'] = \file_get_contents($file);
+        });
 
         return $data;
     }
