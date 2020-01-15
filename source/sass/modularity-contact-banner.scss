@@ -22,6 +22,7 @@ $item-padding: 30px;
 
     &__items {
         background: #fff;
+        background: linear-gradient(180deg, rgba(#fff, 1) 0%, rgba(rgb(248, 248, 248),1) 100%);
         box-shadow: 0 10px 30px rgba(#000, .2);
         display: flex;
         flex-basis: 25%;
@@ -73,19 +74,29 @@ $item-padding: 30px;
         i {
             font-size: .8em;
             vertical-align: top;
+            transition: all 200ms;
+        }
+
+        &:hover {
+            text-decoration: none;
+
+            i {
+                margin-left: 8px;
+                margin-right: -4px;
+            }
         }
     }
 
-    &__item &__icon {
+    &__icon {
         margin-right: 15px;
         svg {
             height: 1.7em;
             width: 1.7em;
-            fill: url(#my-cool-gradient) #fa1a74;
+            fill: url(#c-contact-banner__icon-gradient) #fa1a74;
         }
     }
 
-    &__item &__item-title-inner {
+    &__item-title-inner {
         font-size: 1.3em;
         font-weight: normal;
         line-height: 1.35em;
@@ -121,14 +132,24 @@ $item-padding: 30px;
         font-size: 1.1em;
         float: right;
         color: #fff;
+        word-wrap: none;
+        white-space: nowrap;
+
+        i {
+            display: inline;
+            font-size: .8em;
+            vertical-align: text-top;
+            transition: all 200ms;
+            line-height: 1.45em;
+        }
 
         &:hover {
             text-decoration: none;
-        }
 
-        i {
-            font-size: .8em;
-            vertical-align: middle;
+            i {
+                margin-left: 8px;
+                margin-right: -4px;
+            }
         }
     }
 }
