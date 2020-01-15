@@ -22,16 +22,13 @@ $item-padding: 30px;
 
     &__items {
         background: #fff;
+        background: linear-gradient(180deg, rgba(#fff, 1) 0%, rgba(rgb(248, 248, 248),1) 100%);
         box-shadow: 0 10px 30px rgba(#000, .2);
         display: flex;
         flex-basis: 25%;
         border-radius: 3px;   
-        overflow: hidden;  
+        position: relative;
         margin-top: 60px;
-    }
-
-    i {
-        display: none; 
     }
 
     &__item {
@@ -39,18 +36,11 @@ $item-padding: 30px;
         padding: $item-padding; 
         color: #000;
         flex-basis: 25%;
+        position: relative;
     }
 
     &__item + &__item {
         border-left: 1px solid #eee;
-    }
-
-    &__item h3 {
-        padding-bottom: 15px;
-    }
-
-    &__item h3 span {
-        font-size: 1.3em;
     }
 
     &__item p {
@@ -84,19 +74,35 @@ $item-padding: 30px;
         i {
             font-size: .8em;
             vertical-align: top;
-        }
-    }
-
-        &:after {
-            content: " >";
-            padding-left: 0;
             transition: all 200ms;
         }
 
-        &:hover:after {
-            padding-left: 10px;
+        &:hover {
+            text-decoration: none;
+
+            i {
+                margin-left: 8px;
+                margin-right: -4px;
+            }
         }
     }
+
+    &__icon {
+        margin-right: 15px;
+        svg {
+            height: 1.7em;
+            width: 1.7em;
+            fill: url(#c-contact-banner__icon-gradient) #fa1a74;
+        }
+    }
+
+    &__item-title-inner {
+        font-size: 1.3em;
+        font-weight: normal;
+        line-height: 1.35em;
+    }
+
+    /* Hours section */ 
 
     &__hours {
         font-size: 1.1em;
@@ -108,37 +114,42 @@ $item-padding: 30px;
         }
     }
 
-    .c-contact-banner__hours-exceptions {
+    &__hours-exceptions {
         line-height: 1.1em;
     }
 
-    .c-contact-banner__hours-time {
+    &__hours-time {
         padding-left: 10px;
         display: inline-block;
     }
 
-    .c-contact-banner__cta {
-        display: inline-block;
-        vertical-align: middle;
-        text-decoration: none;
-        cursor: pointer;
-        line-height: 1;
-        font-weight: 700;
-        background-color: transparent;
-        letter-spacing: .1em;
+    /* Info link */ 
+
+    &__info {
+        font-weight: bold;
+        padding: 20px 0;
+        display: block;
+        font-size: 1.1em;
+        float: right;
+        color: #fff;
+        word-wrap: none;
+        white-space: nowrap;
+
+        i {
+            display: inline;
+            font-size: .8em;
+            vertical-align: text-top;
+            transition: all 200ms;
+            line-height: 1.45em;
+        }
 
         &:hover {
-            background-color: #eee;
-        }
+            text-decoration: none;
 
-        i {
-            font-size: .8em;
-            vertical-align: middle;
-        }
-
-        i {
-            font-size: .8em;
-            vertical-align: middle;
+            i {
+                margin-left: 8px;
+                margin-right: -4px;
+            }
         }
     }
 }
