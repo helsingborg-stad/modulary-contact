@@ -1,3 +1,5 @@
+$item-padding: 30px;
+
 .c-contact-banner {
     padding: 70px 0;
     color: #fff; 
@@ -30,7 +32,7 @@
 
     &__item {
         display: block;
-        padding: 30px 30px 60px 30px; 
+        padding: $item-padding; 
         color: #000;
         flex-basis: 25%;
         position: relative;
@@ -44,8 +46,19 @@
         font-size: 1.1em;
     }
 
-    &__item &__cta {
-        padding: 10px 15px;
+    &__item--content {
+        padding: $item-padding/2 0;
+    }
+
+    &__item-title {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__cta {
+        margin-bottom: -#{$item-padding};
+        padding: 20px 0;
         display: block;
         text-decoration: none;
         cursor: pointer;
@@ -54,19 +67,13 @@
         background-color: transparent;
         letter-spacing: .1em;
         text-transform: uppercase;
-        margin-top: 10px;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        background-color: #eee;
-        border-radius: 5px 0 0 0;
-    }
+        border-top: 1px solid #eee;
+        text-align: right;
 
-    &__item-title {
-        padding-bottom: 15px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        i {
+            font-size: .8em;
+            vertical-align: top;
+        }
     }
 
     &__item &__icon {
@@ -117,6 +124,11 @@
 
         &:hover {
             text-decoration: none;
+        }
+
+        i {
+            font-size: .8em;
+            vertical-align: middle;
         }
     }
 }
