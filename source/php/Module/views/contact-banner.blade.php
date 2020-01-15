@@ -117,8 +117,11 @@
                                 </span>
                             </p>
 
-                            <a href="{{ $listItem[$fieldNamespace . 'cta_url'] }}" class="c-contact-banner__cta">
-                                 {{ $listItem[$fieldNamespace . 'cta_label'] }} <i class="pricon pricon-angle-right"></i>
+                            <a
+                                href="{{ $listItem[$fieldNamespace . 'cta_url'] }}"
+                                onclick="{{ $item->ctaOnClick }}" class="c-contact-banner__cta"
+                            >
+                                {{ $listItem[$fieldNamespace . 'cta_label'] }} <i class="pricon pricon-angle-right"></i>
                             </a>
                         </div>
                     @endforeach
