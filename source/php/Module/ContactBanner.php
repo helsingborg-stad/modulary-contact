@@ -27,10 +27,14 @@ class ContactBanner extends \Modularity\Module
     public function data() : array
     {
         $data = array();
+        $id = $this->ID;
+        $fieldNamespace = 'mod_contactbanner_';
 
-        $data['mainContent'] = get_field('mod_contactbanner_main_content', $this->ID);
-
-        var_dump($data);
+        $data['headerMainContent'] = get_the_title($id);
+        $data['mainContent'] = get_field($fieldNamespace . 'main_content', $id);
+        $data['headerBusinessHours'] = get_field($fieldNamespace . 'header_business_hours', $id);
+        $data['abnormalitiesBusinessHours'] = get_field($fieldNamespace . 'abnormalities_business_hours', $id);
+        $data['hoursList'] = get_field($fieldNamespace . 'hours_list', $id);
 
         return $data;
     }
