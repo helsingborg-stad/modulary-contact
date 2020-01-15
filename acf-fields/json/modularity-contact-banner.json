@@ -6,8 +6,8 @@
             "key": "field_5e1d90c31ee10",
             "label": "Main content",
             "name": "mod_contactbanner_main_content",
-            "type": "wysiwyg",
-            "instructions": "Add your content here",
+            "type": "text",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,10 +16,120 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e1e26c283a52",
+            "label": "Header - Business hours",
+            "name": "mod_contactbanner_header_business_hours",
+            "type": "text",
+            "instructions": "Enter business hours header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e1e28733a316",
+            "label": "Abnormalities - Business hours",
+            "name": "mod_contactbanner_abnormalities_business_hours",
+            "type": "text",
+            "instructions": "Enter business hours abnormalities",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e1e309814335",
+            "label": "Hours list",
+            "name": "mod_contactbanner_hours_list",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add business weekdays and hours",
+            "sub_fields": [
+                {
+                    "key": "field_5e1e315214337",
+                    "label": "Weekdays",
+                    "name": "mod_contactbanner_weekdays",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e1e318814338",
+                    "label": "Hours from",
+                    "name": "mod_contactbanner_hours_from",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_5e1e31bf14339",
+                    "label": "Hours to",
+                    "name": "mod_contactbanner_hours_to",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                }
+            ]
         }
     ],
     "location": [
