@@ -146,7 +146,7 @@
                                 </span>
                             </p>
 
-                            <a href="#" onclick="{{ $item->ctaOnClick }}" class="c-contact-banner__cta">
+                            <a href="{{ $item->ctaUrl }}" onclick="{{ $item->ctaOnClick }}" class="c-contact-banner__cta">
                                 {{ $item->ctaLabel }} <i class="pricon pricon-angle-right"></i>
                             </a>
                         </div>
