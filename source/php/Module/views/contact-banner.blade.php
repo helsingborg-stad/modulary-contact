@@ -101,8 +101,7 @@
                     @foreach ($ctaList as $listItem)
                         <div class="c-contact-banner__item">
                             <div class="c-contact-banner__icon-wrapper">
-                                
-                                {!! $listItem[$fieldNamespace . 'cta_icon']['url'] !!}
+                                {!! $listItem[$fieldNamespace . 'cta_icon'] !!}
                             </div>
 
                             <h3 class="c-typography c-typography__variant--h2">
