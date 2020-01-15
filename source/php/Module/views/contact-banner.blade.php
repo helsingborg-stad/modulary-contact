@@ -40,8 +40,6 @@
 
 ?>
 
-<?php $fieldNamespace = 'mod_contactbanner_'; ?>
-
 <div class="c-contact-banner">
     <div class="container">
         <div class="grid">
@@ -59,13 +57,13 @@
 
                 <div class="c-contact-banner__hours">
 
-                    @if ($headerBusinessHours)
+                    @isset($headerBusinessHours)
                         <h3 class="c-contact-banner__hours-heading">
                             <span class="c-contact-banner__hours-heading-inner">{{ $headerBusinessHours }}</span>
                         </h3>
-                    @endif
+                    @endisset
 
-                    @if ($hoursList)
+                    @isset($hoursList)
                         <ul class="c-contact-banner__hours-list">
                             @foreach ($hoursList as $listItem)
                                 <li class="c-contact-banner__hours-list-item-0">
@@ -80,15 +78,15 @@
                                 </li>
                             @endforeach
                         </ul>
-                    @endif
+                    @endisset
 
-                    @if ($abnormalitiesBusinessHours)
+                    @isset($abnormalitiesBusinessHours)
                         <div class="c-contact-banner__hours-exceptions">
                             <span class="small">
                                 {{ $abnormalitiesBusinessHours }}
                             </span>
                         </div>
-                    @endif
+                    @endisset
                 </div>
             </div>
 
@@ -100,24 +98,27 @@
                             <stop offset="100%" stop-color="#fa1a74" />
                         </linearGradient>
                     </svg>
-                    @foreach ($items as $item)
+                    @foreach ($ctaList as $listItem)
                         <div class="c-contact-banner__item">
                             <div class="c-contact-banner__icon-wrapper">
-                                {!! $item->icon !!}
+                                
+                                {!! $listItem[$fieldNamespace . 'cta_icon']['url'] !!}
                             </div>
 
                             <h3 class="c-typography c-typography__variant--h2">
-                                <span class="c-typography__inner">{{ $item->title }}</span>
+                                <span class="c-typography__inner">
+                                    {{ $listItem[$fieldNamespace . 'cta_title'] }}
+                                </span>
                             </h3>
 
                             <p class="c-contact-banner__item--content">
                                 <span class="c-contact-banner__item--content-inner">
-                                    {{ $item->content }}
+                                    {{ $listItem[$fieldNamespace . 'cta_content'] }}
                                 </span>
                             </p>
 
-                            <a href="#" class="c-contact-banner__cta">
-                                {{ $item->ctaLabel }} <i class="pricon pricon-angle-right"></i>
+                            <a href="{{ $listItem[$fieldNamespace . 'cta_url'] }}" class="c-contact-banner__cta">
+                                 {{ $listItem[$fieldNamespace . 'cta_label'] }} <i class="pricon pricon-angle-right"></i>
                             </a>
                         </div>
                     @endforeach
