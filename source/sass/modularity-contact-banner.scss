@@ -1,7 +1,7 @@
-$item-padding: 30px;
+$item-padding: 32px;
 
 .c-contact-banner {
-    padding: 70px 0;
+    padding: $item-padding*2 0;
     color: #fff; 
     background-color: #cb0050;
     background: linear-gradient(100deg, rgba(#cb0050, 1) 0%, rgba(#fa1a74,1) 100%);
@@ -13,7 +13,7 @@ $item-padding: 30px;
     }
 
     &__heading + &__preamble {
-        margin-top: 10px;
+        margin-top: 8px;
     }
 
     &__preamble {
@@ -73,7 +73,7 @@ $item-padding: 30px;
 
     &__cta {
         margin-bottom: -#{$item-padding};
-        padding: 20px 0;
+        padding: 24px 0;
         display: block;
         text-decoration: none;
         cursor: pointer;
@@ -102,7 +102,7 @@ $item-padding: 30px;
     }
 
     &__icon {
-        margin-right: 15px;
+        margin-right: 16px;
         svg {
             height: 1.7em;
             width: 1.7em;
@@ -120,7 +120,7 @@ $item-padding: 30px;
 
     &__hours {
         font-size: 1.1em;
-        padding-left: 20px; 
+        padding-left: 24px; 
         border-left: 4px solid rgba(#fff,.8);
 
         h3, ul, div + h3, ul, div {
@@ -133,7 +133,7 @@ $item-padding: 30px;
     }
 
     &__hours-time {
-        padding-left: 10px;
+        padding-left: 8px;
         display: inline-block;
     }
 
@@ -141,7 +141,7 @@ $item-padding: 30px;
 
     &__info {
         font-weight: bold;
-        padding: 20px 0;
+        padding: 24px 0;
         display: block;
         font-size: 1.1em;
         float: right;
