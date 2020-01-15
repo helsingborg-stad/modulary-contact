@@ -1,3 +1,5 @@
+$item-padding: 30px;
+
 .c-contact-banner {
     padding: 70px 0;
     color: #fff; 
@@ -34,7 +36,7 @@
 
     &__item {
         display: block;
-        padding: 30px; 
+        padding: $item-padding; 
         color: #000;
         flex-basis: 25%;
     }
@@ -55,17 +57,35 @@
         font-size: 1.1em;
     }
 
-    &__info {
-        font-weight: bold;
+    &__item--content {
+        padding: $item-padding/2 0;
+    }
+
+    &__item-title {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__cta {
+        margin-bottom: -#{$item-padding};
         padding: 20px 0;
         display: block;
-        font-size: 1.1em;
-        float: right;
-        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        line-height: 1;
+        font-weight: 600;
+        background-color: transparent;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        border-top: 1px solid #eee;
+        text-align: right;
 
-        &:hover {
-            text-decoration: none;
+        i {
+            font-size: .8em;
+            vertical-align: top;
         }
+    }
 
         &:after {
             content: " >";
@@ -109,6 +129,11 @@
 
         &:hover {
             background-color: #eee;
+        }
+
+        i {
+            font-size: .8em;
+            vertical-align: middle;
         }
     }
 }
