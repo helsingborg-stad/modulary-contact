@@ -41,25 +41,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_5e1e28733a316",
-            "label": "Abnormalities - Business hours",
-            "name": "mod_contactbanner_abnormalities_business_hours",
-            "type": "text",
-            "instructions": "Enter business hours abnormalities",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5e1e309814335",
             "label": "Hours list",
             "name": "mod_contactbanner_hours_list",
@@ -128,6 +109,162 @@
                     },
                     "display_format": "H:i",
                     "return_format": "H:i"
+                }
+            ]
+        },
+        {
+            "key": "field_5e1e28733a316",
+            "label": "Abnormalities - Business hours",
+            "name": "mod_contactbanner_abnormalities_business_hours",
+            "type": "text",
+            "instructions": "Enter business hours abnormalities",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e1ed6113cdb8",
+            "label": "Call to action icon list",
+            "name": "mod_contactbanner_cta_list",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add item",
+            "sub_fields": [
+                {
+                    "key": "field_5e1ed6a13cdb9",
+                    "label": "Title",
+                    "name": "mod_contactbanner_cta_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e1ed6cd3cdba",
+                    "label": "Icon",
+                    "name": "mod_contactbanner_cta_icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "svg"
+                },
+                {
+                    "key": "field_5e1ed7603cdbb",
+                    "label": "Content",
+                    "name": "mod_contactbanner_cta_content",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e1ed76b3cdbc",
+                    "label": "Label - Call to action",
+                    "name": "mod_contactbanner_cta_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e1ed8323cdbd",
+                    "label": "URL - Call to action",
+                    "name": "mod_contentbanner_cta_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5e1ee12b3cdbe",
+                    "label": "onClick - Call to action",
+                    "name": "mod_contactbanner_cta_onclick",
+                    "type": "text",
+                    "instructions": "Enter javascript",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
