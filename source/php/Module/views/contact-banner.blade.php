@@ -1,5 +1,5 @@
 <?php 
-
+    //Items 
     $items = array(
         (object) array(
             'title' => 'Chatta',
@@ -38,69 +38,89 @@
         )
     ); 
 
+    //Open hours 
+    $timeheading = "Öppettider"; 
+
     $timerows = array(
-        '',
-        '',
-        ''
+        (object) array(
+            'day' => 'Måndag-Torsdag', 
+            'hour' => '07:00-19:00'
+        ),
+        (object) array(
+            'day' => 'Fredag', 
+            'hour' => '07:00-17:00'
+        ),
+        (object) array(
+            'day' => 'Lördag', 
+            'hour' => '10:00-15:00'
+        ),
     ); 
 
-    $timeDetails = ""; 
+    $timeDetails = "Avvikande öppettider kan förekomma i samband med röda dagar, samt dag innan röd dag. "; 
 
-    $mainContent = ""; 
+    //Heading
+    $title = "Kontakta kommunen - En väg in"; 
+    $content = "När du kontaktar oss är det kommunvägledarna på Helsingborg kontaktcenter som tar hand om dina frågor."; 
 
+    //Info link
+    $moreinfo = "Läs mer om helsingborg kontaktcenter ";
+    $moreinfoUrl = "#";  
 ?>
 
 <div class="c-contact-banner">
     <div class="container">
         <div class="grid">
-            
-            <div class="grid-md-8">
-                <h2 class="c-contact-banner__heading">
-                    <span class="c-contact-banner__heading-inner">Kontakta kommunen - En väg in</span>
-                </h2>
 
-                <p class="c-contact-banner__preamble">
-                    <span class="c-contact-banner__preamble-inner">När du kontaktar oss är det kommunvägledarna på Helsingborg kontaktcenter som tar hand om dina frågor.</span>
-                </p>
+            <!-- Heading --> 
+            <div class="grid-md-8">
+                @if($title)
+                    <h2 class="c-contact-banner__heading">
+                        <span class="c-contact-banner__heading-inner">{{ $title }}</span>
+                    </h2>
+                @endif
+
+                @if($content)
+                    <p class="c-contact-banner__preamble">
+                        <span class="c-contact-banner__preamble-inner">
+                            {{ $content }}
+                        </span>
+                    </p>
+                @endif
             </div>
             
+            <!-- Hours -->
             <div class="grid-md-4">
 
                 <div class="c-contact-banner__hours">
 
-                    <h3 class="c-contact-banner__hours-heading">
-                        <span class="c-contact-banner__hours-heading-inner">Öppettider</span>
-                    </h3>
+                    @if($timeheading)
+                        <h3 class="c-contact-banner__hours-heading">
+                            <span class="c-contact-banner__hours-heading-inner">{{ $timeheading }}</span>
+                        </h3>
+                    @endif
 
-                    <ul class="c-contact-banner__hours-list">
-                        <li class="c-contact-banner__hours-list-item-0">
-                            <span class="c-contact-banner__hours-list-label">
-                                <span class="c-contact-banner__hours-weekdays">Måndag-Torsdag</span> 
-                                <span class="c-contact-banner__hours-time">07:00-19:00</span>
-                            </span>
-                        </li>
-                        <li class="c-contact-banner__hours-list-item-0">
-                            <span class="c-contact-banner__hours-list-label">
-                                <span class="c-contact-banner__hours-weekdays">Fredag</span> 
-                                <span class="c-contact-banner__hours-time">07:00-17:00</span>
-                            </span>
-                        </li>
-                        <li class="c-contact-banner__hours-list-item-0">
-                            <span class="c-contact-banner__hours-list-label">
-                                <span class="c-contact-banner__hours-weekdays">Lördag</span> 
-                                <span class="c-contact-banner__hours-time">10:00-15:00</span>
-                            </span>
-                        </li>
-                    </ul>
+                    @if($timerows)
+                        <ul class="c-contact-banner__hours-list">
+                            @foreach($timerows as $time) 
+                                <li class="c-contact-banner__hours-list-item-{{ $loop->index }}">
+                                    <span class="c-contact-banner__hours-list-label">
+                                        <span class="c-contact-banner__hours-weekdays">{{ $time->day }}</span> 
+                                        <span class="c-contact-banner__hours-time">{{ $time->hour }}</span>
+                                    </span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
 
                     <div class="c-contact-banner__hours-exceptions">
                         <span class="small">
-                            Avvikande öppettider kan förekomma i samband med röda dagar, samt dag innan röd dag. 
+                            {{ $timeDetails }}
                         </span>
                     </div>
                 </div>
             </div>
 
+            <!-- Items -->
             <div class="grid-xs-12">
                 <div class="c-contact-banner__items">
                     <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
@@ -126,7 +146,7 @@
                                 </span>
                             </p>
 
-                            <a href="#" class="c-contact-banner__cta">
+                            <a href="#" onclick="{{ $item->ctaOnClick }}" class="c-contact-banner__cta">
                                 {{ $item->ctaLabel }} <i class="pricon pricon-angle-right"></i>
                             </a>
                         </div>
@@ -134,8 +154,9 @@
                 </div>
             </div>
 
+            <!-- More info -->
             <div class="grid-xs-12">
-                <a href="#" class="c-contact-banner__info">Läs mer om helsingborg kontaktcenter <i class="pricon pricon-chevron-right"></i></a>
+                <a href="{{ $moreinfoUrl }}" class="c-contact-banner__info"> {{ $moreinfo }} <i class="pricon pricon-chevron-right"></i></a>
             </div>
 
         </div>
