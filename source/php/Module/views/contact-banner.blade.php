@@ -73,17 +73,17 @@
         <div class="grid">
 
             <div class="grid-md-8">
-                @if($title)
-                <h2 class="c-contact-banner__heading">
-                    <span class="c-contact-banner__heading-inner">{{ $headerMainContent }}</span>
-                </h2>
-                @endif
+                @isset($title)
+                    <h2 class="c-contact-banner__heading">
+                        <span class="c-contact-banner__heading-inner">{{ $headerMainContent }}</span>
+                    </h2>
+                @endisset
 
-                @if($content)
-                <p class="c-contact-banner__preamble">
-                    <span class="c-contact-banner__preamble-inner">{{ $mainContent }}</span>
-                </p>
-                @endif
+                @isset($content)
+                    <p class="c-contact-banner__preamble">
+                        <span class="c-contact-banner__preamble-inner">{{ $mainContent }}</span>
+                    </p>
+                @endisset
             </div>
 
             <div class="grid-md-4">
