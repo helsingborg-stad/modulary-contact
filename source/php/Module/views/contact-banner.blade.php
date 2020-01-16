@@ -53,6 +53,7 @@
                 </div>
             </div>
 
+            <!-- Items -->
             <div class="grid-xs-12">
                 <div class="c-contact-banner__items">
                     <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
