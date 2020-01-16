@@ -98,32 +98,34 @@
                             <stop offset="100%" stop-color="#fa1a74" />
                         </linearGradient>
                     </svg>
-                    @foreach ($ctaList as $listItem)
-                        <div class="c-contact-banner__item">
-                            <div class="c-contact-banner__icon-wrapper">
-                                {!! $listItem[$fieldNamespace . 'cta_icon'] !!}
+                    @isset($ctaList)
+                        @foreach ($ctaList as $listItem)
+                            <div class="c-contact-banner__item">
+                                <div class="c-contact-banner__icon-wrapper">
+                                    {!! $listItem[$fieldNamespace . 'cta_icon'] !!}
+                                </div>
+
+                                <h3 class="c-typography c-typography__variant--h2">
+                                    <span class="c-typography__inner">
+                                        {{ $listItem[$fieldNamespace . 'cta_title'] }}
+                                    </span>
+                                </h3>
+
+                                <p class="c-contact-banner__item--content">
+                                    <span class="c-contact-banner__item--content-inner">
+                                        {{ $listItem[$fieldNamespace . 'cta_content'] }}
+                                    </span>
+                                </p>
+
+                                <a
+                                    href="{{ $listItem[$fieldNamespace . 'cta_url'] }}"
+                                    onclick="{!! $item->ctaOnClick !!}" class="c-contact-banner__cta"
+                                >
+                                    {{ $listItem[$fieldNamespace . 'cta_label'] }} <i class="pricon pricon-angle-right"></i>
+                                </a>
                             </div>
-
-                            <h3 class="c-typography c-typography__variant--h2">
-                                <span class="c-typography__inner">
-                                    {{ $listItem[$fieldNamespace . 'cta_title'] }}
-                                </span>
-                            </h3>
-
-                            <p class="c-contact-banner__item--content">
-                                <span class="c-contact-banner__item--content-inner">
-                                    {{ $listItem[$fieldNamespace . 'cta_content'] }}
-                                </span>
-                            </p>
-
-                            <a
-                                href="{{ $listItem[$fieldNamespace . 'cta_url'] }}"
-                                onclick="{{ $item->ctaOnClick }}" class="c-contact-banner__cta"
-                            >
-                                {{ $listItem[$fieldNamespace . 'cta_label'] }} <i class="pricon pricon-angle-right"></i>
-                            </a>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @endisset
                 </div>
             </div>
 
