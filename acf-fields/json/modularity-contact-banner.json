@@ -6,7 +6,7 @@
             "key": "field_5e1d90c31ee10",
             "label": "Main content",
             "name": "mod_contactbanner_main_content",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,9 +17,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
         },
         {
             "key": "field_5e1e26c283a52",
@@ -145,8 +145,8 @@
                 "id": ""
             },
             "collapsed": "",
-            "min": 0,
-            "max": 0,
+            "min": 4,
+            "max": 4,
             "layout": "block",
             "button_label": "Add item",
             "sub_fields": [
@@ -234,8 +234,8 @@
                 {
                     "key": "field_5e1ed8323cdbd",
                     "label": "URL - Call to action",
-                    "name": "mod_contentbanner_cta_url",
-                    "type": "url",
+                    "name": "mod_contactbanner_cta_url",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -245,7 +245,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_5e1ee12b3cdbe",
@@ -291,7 +294,7 @@
             "key": "field_5e2012c96a110",
             "label": "Url - More info (Footer)",
             "name": "mod_contactbanner_url_more_info",
-            "type": "url",
+            "type": "page_link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -300,8 +303,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "http(s):\/\/"
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
         }
     ],
     "location": [
