@@ -29,7 +29,7 @@
                     @isset($hoursList)
                         <ul class="c-contact-banner__hours-list">
                             @foreach ($hoursList as $listItem)
-                                <li class="c-contact-banner__hours-list-item-0">
+                                <li class="c-contact-banner__hours-list-item-{{ $loop->index }}">
                                     <span class="c-contact-banner__hours-list-label">
                                         <span class="c-contact-banner__hours-weekdays">
                                             {{ $listItem[$fieldNamespace . 'weekdays'] }}
