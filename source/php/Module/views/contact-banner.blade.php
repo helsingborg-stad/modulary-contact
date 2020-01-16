@@ -1,4 +1,4 @@
-<div id="#contact" class="c-contact-banner">
+<div id="contact" class="c-contact-banner">
     <div class="container">
         <div class="grid">
 
