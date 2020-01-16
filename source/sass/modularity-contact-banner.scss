@@ -1,18 +1,15 @@
 $item-padding: 32px;
-
 .c-contact-banner {
+
     padding: $item-padding*2 0;
     color: #fff; 
     background-color: #cb0050;
     background: linear-gradient(100deg, rgba(#cb0050, 1) 0%, rgba(#fa1a74,1) 100%);
 
     /* Heading & Preamble */ 
-
     &__heading {
         font-size: 2.5em; 
     }
-
-.c-contact-banner {
 
     &__items {
         background: #fff;

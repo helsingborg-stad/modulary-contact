@@ -6,25 +6,20 @@ class App
 {
     public function __construct()
     {
-        // add_action('admin_enqueue_scripts', array($this, 'enqueueStyles'));
-        // add_action('admin_enqueue_scripts', array($this, 'enqueueScripts'));
+        add_action('plugins_loaded', array($this, 'registerModule'));
     }
 
     /**
-     * Enqueue required style
+     * Register the module
      * @return void
      */
-    public function enqueueStyles()
+    public function registerModule()
     {
-
-    }
-
-    /**
-     * Enqueue required scripts
-     * @return void
-     */
-    public function enqueueScripts()
-    {
-
+        if (function_exists('modularity_register_module')) {
+            modularity_register_module(
+                MODULARITYCONTACTBANNER_MODULE_PATH,
+                'ContactBanner'
+            );
+        }
     }
 }

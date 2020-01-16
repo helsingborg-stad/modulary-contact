@@ -108,7 +108,7 @@ gulp.task('sass', function() {
 // ==========================================================================
 gulp.task('scripts', function() {
     var filePath = 'source/js/';
-    var files = ['modularity-login-form.js'];
+    var files = ['modularity-contact-banner.js'];
     var tasks = files.map(function(entry) {
         return (
             browserify({

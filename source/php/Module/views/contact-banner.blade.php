@@ -32,10 +32,10 @@
                                 <li class="c-contact-banner__hours-list-item-{{ $loop->index }}">
                                     <span class="c-contact-banner__hours-list-label">
                                         <span class="c-contact-banner__hours-weekdays">
-                                            {{ $listItem[$fieldNamespace . 'weekdays'] }}
+                                            {{ $listItem->weekdays }}
                                         </span>
                                         <span class="c-contact-banner__hours-time">
-                                            {{ $listItem[$fieldNamespace . 'hours_from'] }}-{{ $listItem[$fieldNamespace . 'hours_to'] }}
+                                            {{ $listItem->from }}-{{ $listItem->to }}
                                         </span>
                                     </span>
                                 </li>
@@ -67,25 +67,29 @@
                             <div class="c-contact-banner__item">
                                 <h3 class="c-contact-banner__item-title">
                                     <span class="c-contact-banner__icon">
-                                        {!! $listItem[$fieldNamespace . 'cta_icon'] !!}
+                                        {!! $listItem->icon !!}
                                     </span>
                                     <span class="c-contact-banner__item-title-inner">
-                                        {{ $listItem[$fieldNamespace . 'cta_title'] }}
+                                        {{ $listItem->title }}
                                     </span>
                                 </h3>
                                 <p class="c-contact-banner__item--content">
                                     <span class="c-contact-banner__item--content-inner">
-                                        {{ $listItem[$fieldNamespace . 'cta_content'] }}
+                                        {{ $listItem->content }}
                                     </span>
                                 </p>
+                                
                                 <a
-                                    href="{!! $listItem[$fieldNamespace . 'cta_url'] !!}"
-                                    @isset($listItem[$fieldNamespace . 'cta_onclick'])
-                                    onclick="{!! $listItem[$fieldNamespace . 'cta_onclick'] !!}"
+                                    @isset($listItem->url)
+                                        href="{{ $listItem->url }}"
+                                    @endisset
+
+                                    @isset($listItem->onclick)
+                                        onclick="{{$listItem->onclick}}"
                                     @endisset
                                     class="c-contact-banner__cta"
                                 >
-                                    {{ $listItem[$fieldNamespace . 'cta_label'] }} <i class="pricon pricon-angle-right"></i>
+                                {{$listItem->label}} <i class="pricon pricon-angle-right"></i>
                                 </a>
                             </div>
                         @endforeach

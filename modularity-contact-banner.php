@@ -45,13 +45,3 @@ add_action('plugins_loaded', function() {
     ));
     $acfExportManager->import();
 });
-
-// Registers the module
-add_action('plugins_loaded', function() {
-    if (function_exists('modularity_register_module')) {
-        modularity_register_module(
-            MODULARITYCONTACTBANNER_MODULE_PATH,
-            'ContactBanner'
-        );
-    }
-});
