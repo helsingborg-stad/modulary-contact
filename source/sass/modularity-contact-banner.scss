@@ -7,13 +7,27 @@ $item-padding: 32px;
     background: linear-gradient(100deg, rgba(#cb0050, 1) 0%, rgba(#fa1a74,1) 100%);
 
     /* Heading & Preamble */ 
+
     &__heading {
         font-size: 2.5em; 
     }
 
-    &__items {
+    &__preamble {
+        font-size: 1.2em;
+        max-width: 550px;
+    }
+
+    &__heading + &__preamble {
+        margin-top: $item-padding/2;
+    }
+
+    /* Items section */
+
+    &__wrapper {
         background: #fff;
+        margin-top: $item-padding*2;
         background: linear-gradient(180deg, rgba(#fff, 1) 0%, rgba(rgb(248, 248, 248),1) 100%);
+        border-radius: 3px; 
         box-shadow:
             0 0.5px 1.8px rgba(0, 0, 0, 0.015),
             0 1px 3.7px rgba(0, 0, 0, 0.022),
@@ -25,30 +39,36 @@ $item-padding: 32px;
             0 11px 28.8px rgba(0, 0, 0, 0.048),
             0 16.9px 44px rgba(0, 0, 0, 0.055),
             0 30px 80px rgba(0, 0, 0, 0.07);
+    }
+
+    &__items {
         display: flex;
-        flex-basis: 25%;
-        border-radius: 3px;   
         position: relative;
-        margin-top: 60px;
     }
 
     &__item {
+        padding: $item-padding $item-padding 0 $item-padding; 
         display: block;
-        padding: $item-padding; 
         color: #000;
         position: relative;
+        flex-basis: 25%;
     }
 
     &__item + &__item {
         border-left: 1px solid #eee;
     }
 
-    &__item p {
-        font-size: 1.1em;
+    &__item-inner {
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
     }
 
-    &__item--content {
-        padding: $item-padding/2 0;
+    &__item-content {
+        margin: $item-padding/2 0;
+        flex-grow: 1;
+        font-size: 1.1em;
     }
 
     &__item-title {
@@ -57,8 +77,13 @@ $item-padding: 32px;
         flex-wrap: wrap;
     }
 
-    &__cta {
-        margin-bottom: -#{$item-padding};
+    &__item-title-inner {
+        font-size: 1.3em;
+        font-weight: normal;
+        line-height: 1.35em;
+    }
+
+    &__item-cta {
         padding: 24px 0;
         display: block;
         text-decoration: none;
@@ -87,19 +112,13 @@ $item-padding: 32px;
         }
     }
 
-    &__icon {
+    &__item-icon {
         margin-right: 16px;
         svg {
             height: 1.7em;
             width: 1.7em;
             fill: url(#c-contact-banner__icon-gradient) #fa1a74;
         }
-    }
-
-    &__item-title-inner {
-        font-size: 1.3em;
-        font-weight: normal;
-        line-height: 1.35em;
     }
 
     /* Hours section */ 
