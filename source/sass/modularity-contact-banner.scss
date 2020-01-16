@@ -1,4 +1,5 @@
 $item-padding: 32px;
+$bp: 899px; 
 .c-contact-banner {
 
     padding: $item-padding*2 0;
@@ -9,12 +10,19 @@ $item-padding: 32px;
     /* Heading & Preamble */ 
 
     &__heading {
-        font-size: 2.5em; 
+        font-size: 1.5em;
+        @media screen and (min-width: #{$bp}) {
+            font-size: 2.3em;
+        }
     }
 
     &__preamble {
-        font-size: 1.2em;
+        font-size: 1em; 
         max-width: 550px;
+
+        @media screen and (min-width: #{$bp}) {
+            font-size: 1.2em;
+        }
     }
 
     &__heading + &__preamble {
@@ -28,6 +36,7 @@ $item-padding: 32px;
         margin-top: $item-padding*2;
         background: linear-gradient(180deg, rgba(#fff, 1) 0%, rgba(rgb(248, 248, 248),1) 100%);
         border-radius: 3px; 
+        overflow: hidden;
         box-shadow:
             0 0.5px 1.8px rgba(0, 0, 0, 0.015),
             0 1px 3.7px rgba(0, 0, 0, 0.022),
@@ -44,6 +53,10 @@ $item-padding: 32px;
     &__items {
         display: flex;
         position: relative;
+        flex-direction: column;
+        @media screen and (min-width: #{$bp}) {
+            flex-direction: row;
+        }
     }
 
     &__item {
@@ -52,10 +65,16 @@ $item-padding: 32px;
         color: #000;
         position: relative;
         flex-basis: 25%;
+        box-shadow: -1px 0px 0px 0px #fff;
     }
 
     &__item + &__item {
-        border-left: 1px solid #eee;
+        border-top: 1px solid rgb(219, 219, 219);
+        @media screen and (min-width: #{$bp}) {
+            border-top: none;
+            border-left: 1px solid rgb(219, 219, 219);
+            box-shadow: 0px -1px 0px 0px #fff;
+        }
     }
 
     &__item-inner {
@@ -125,8 +144,12 @@ $item-padding: 32px;
 
     &__hours {
         font-size: 1.1em;
-        padding-left: 24px; 
-        border-left: 4px solid rgba(#fff,.8);
+        
+
+        @media screen and (min-width: 899px) {
+            padding-left: 24px; 
+            border-left: 4px solid rgba(#fff,.8);
+        }
 
         h3, ul, div + h3, ul, div {
             margin-top: 10px;
