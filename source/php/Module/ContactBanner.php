@@ -37,8 +37,10 @@ class ContactBanner extends \Modularity\Module
         $data['abnormalitiesBusinessHours'] = get_field($fieldNamespace . 'abnormalities_business_hours', $postId);
         $data['hoursList'] = get_field($fieldNamespace . 'hours_list', $postId);
         $data['ctaList'] = get_field($fieldNamespace . 'cta_list', $postId);
+        $data['labelMoreInfo'] = get_field($fieldNamespace . 'label_more_info', $postId);
+        $data['urlMoreInfo'] = get_field($fieldNamespace . 'url_more_info', $postId);
 
-        array_walk($data['ctaList'], function(&$item) {
+        \array_walk($data['ctaList'], function(&$item) {
             $file = get_attached_file($item['mod_contactbanner_cta_icon'], true);
             $item['mod_contactbanner_cta_icon'] = \file_get_contents($file);
         });

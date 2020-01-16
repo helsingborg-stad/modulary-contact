@@ -1,5 +1,6 @@
 <?php 
 
+    //Items 
     $items = array(
         (object) array(
             'title' => 'Chatta',
@@ -38,22 +39,54 @@
         )
     ); 
 
+    //Open hours 
+    $timeheading = "Öppettider"; 
+
+    $timerows = array(
+        (object) array(
+            'day' => 'Måndag-Torsdag', 
+            'hour' => '07:00-19:00'
+        ),
+        (object) array(
+            'day' => 'Fredag', 
+            'hour' => '07:00-17:00'
+        ),
+        (object) array(
+            'day' => 'Lördag', 
+            'hour' => '10:00-15:00'
+        ),
+    ); 
+
+    $timeDetails = "Avvikande öppettider kan förekomma i samband med röda dagar, samt dag innan röd dag. "; 
+
+    //Heading
+    $title = "Kontakta kommunen - En väg in"; 
+    $content = "När du kontaktar oss är det kommunvägledarna på Helsingborg kontaktcenter som tar hand om dina frågor."; 
+
+    //Info link
+    $moreinfo = "Läs mer om helsingborg kontaktcenter ";
+    $moreinfoUrl = "#";  
 ?>
 
 <div class="c-contact-banner">
     <div class="container">
         <div class="grid">
 
-            <div class="grid-xs-8">
+            <div class="grid-md-8">
+                @if($title)
                 <h2 class="c-contact-banner__heading">
                     <span class="c-contact-banner__heading-inner">{{ $headerMainContent }}</span>
                 </h2>
+                @endif
+
+                @if($content)
                 <p class="c-contact-banner__preamble">
                     <span class="c-contact-banner__preamble-inner">{{ $mainContent }}</span>
                 </p>
+                @endif
             </div>
 
-            <div class="grid-xs-4">
+            <div class="grid-md-4">
 
                 <div class="c-contact-banner__hours">
 
@@ -101,25 +134,25 @@
                     @isset($ctaList)
                         @foreach ($ctaList as $listItem)
                             <div class="c-contact-banner__item">
-                                <div class="c-contact-banner__icon-wrapper">
-                                    {!! $listItem[$fieldNamespace . 'cta_icon'] !!}
-                                </div>
-
-                                <h3 class="c-typography c-typography__variant--h2">
-                                    <span class="c-typography__inner">
+                                <h3 class="c-contact-banner__item-title">
+                                    <span class="c-contact-banner__icon">
+                                        {!! $listItem[$fieldNamespace . 'cta_icon'] !!}
+                                    </span>
+                                    <span class="c-contact-banner__item-title-inner">
                                         {{ $listItem[$fieldNamespace . 'cta_title'] }}
                                     </span>
                                 </h3>
-
                                 <p class="c-contact-banner__item--content">
                                     <span class="c-contact-banner__item--content-inner">
                                         {{ $listItem[$fieldNamespace . 'cta_content'] }}
                                     </span>
                                 </p>
-
                                 <a
-                                    href="{{ $listItem[$fieldNamespace . 'cta_url'] }}"
-                                    onclick="{!! $item->ctaOnClick !!}" class="c-contact-banner__cta"
+                                    href="{!! $listItem[$fieldNamespace . 'cta_url'] !!}"
+                                    @isset($listItem[$fieldNamespace . 'cta_onclick'])
+                                    onclick="{!! $listItem[$fieldNamespace . 'cta_onclick'] !!}"
+                                    @endisset
+                                    class="c-contact-banner__cta"
                                 >
                                     {{ $listItem[$fieldNamespace . 'cta_label'] }} <i class="pricon pricon-angle-right"></i>
                                 </a>
@@ -129,9 +162,11 @@
                 </div>
             </div>
 
-            <div class="grid-xs-12">
-                <a href="#" class="c-contact-banner__info">Läs mer om helsingborg kontaktcenter</a>
-            </div>
+            @isset($urlMoreInfo)
+                <div class="grid-xs-12">
+                    <a href="{!! $urlMoreInfo !!}" class="c-contact-banner__info">{{ $labelMoreInfo }} <i class="pricon pricon-chevron-right"></i></a>
+                </div>
+            @endisset
 
         </div>
     </div>
