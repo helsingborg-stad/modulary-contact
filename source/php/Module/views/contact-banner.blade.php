@@ -3,13 +3,13 @@
         <div class="grid">
 
             <div class="grid-md-8">
-                @isset($title)
+                @isset($headerMainContent)
                     <h2 class="c-contact-banner__heading">
                         <span class="c-contact-banner__heading-inner">{{ $headerMainContent }}</span>
                     </h2>
                 @endisset
 
-                @isset($content)
+                @isset($mainContent)
                     <p class="c-contact-banner__preamble">
                         <span class="c-contact-banner__preamble-inner">{{ $mainContent }}</span>
                     </p>
