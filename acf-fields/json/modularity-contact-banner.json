@@ -82,7 +82,7 @@
                     "key": "field_5e1e318814338",
                     "label": "Hours from",
                     "name": "mod_contactbanner_hours_from",
-                    "type": "time_picker",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -91,14 +91,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "H:i",
-                    "return_format": "H:i"
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 5
                 },
                 {
                     "key": "field_5e1e31bf14339",
                     "label": "Hours to",
                     "name": "mod_contactbanner_hours_to",
-                    "type": "time_picker",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -107,8 +110,11 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "H:i",
-                    "return_format": "H:i"
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 5
                 }
             ]
         },
