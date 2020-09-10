@@ -5,15 +5,35 @@
             <!-- Main content -->
             <div class="grid-md-8">
                 @isset($headerMainContent)
-                    <h2 class="c-contact-banner__heading">
-                        <span class="c-contact-banner__heading-inner">{{ $headerMainContent }}</span>
-                    </h2>
+
+                    @typography([
+                        'element' => "h2",
+                        'classList' => ['c-contact-banner__heading']
+                    ])
+                        @typography([
+                            'element' => "span",
+                            'classList' => ['c-contact-banner__heading-inner']
+                        ])
+                            {{ $headerMainContent }}
+                        @endtypography
+                    @endtypography
+
                 @endisset
 
                 @isset($mainContent)
-                    <p class="c-contact-banner__preamble">
-                        <span class="c-contact-banner__preamble-inner">{{ $mainContent }}</span>
-                    </p>
+
+                        @typography([
+                            'element' => "p",
+                            'classList' => ['c-contact-banner__preamble']
+                        ])
+                            @typography([
+                                'element' => "span",
+                                'classList' => ['c-contact-banner__preamble-inner']
+                            ])
+                                {{ $mainContent }}
+                            @endtypography
+                        @endtypography
+
                 @endisset
             </div>
 
@@ -23,23 +43,46 @@
                 <div class="c-contact-banner__hours">
 
                     @isset($headerBusinessHours)
-                        <h3 class="c-contact-banner__hours-heading">
-                            <span class="c-contact-banner__hours-heading-inner">{{ $headerBusinessHours }}</span>
-                        </h3>
+
+                        @typography([
+                            'element' => "h3",
+                            'classList' => ['c-contact-banner__hours-heading']
+                        ])
+                            @typography([
+                                'element' => "span",
+                                'classList' => ['c-contact-banner__hours-heading-inner']
+                            ])
+                                {{ $headerBusinessHours }}
+                            @endtypography
+                        @endtypography
+
                     @endisset
 
                     @isset($hoursList)
                         <ul class="c-contact-banner__hours-list">
                             @foreach ($hoursList as $listItem)
                                 <li class="c-contact-banner__hours-list-item-{{ $loop->index }}">
-                                    <span class="c-contact-banner__hours-list-label">
-                                        <span class="c-contact-banner__hours-weekdays">
+
+                                    @typography([
+                                        'element' => "span",
+                                        'classList' => ['c-contact-banner__hours-list-label']
+                                    ])
+                                        @typography([
+                                            'element' => "span",
+                                            'classList' => ['c-contact-banner__hours-weekdays']
+                                        ])
                                             {{ $listItem->weekdays }}
-                                        </span>
-                                        <span class="c-contact-banner__hours-time">
+                                        @endtypography
+
+                                        @typography([
+                                            'element' => "span",
+                                            'classList' => ['c-contact-banner__hours-time']
+                                        ])
                                             {{ $listItem->from }}-{{ $listItem->to }}
-                                        </span>
-                                    </span>
+                                        @endtypography
+
+                                    @endtypography
+
                                 </li>
                             @endforeach
                         </ul>
@@ -47,9 +90,14 @@
 
                     @isset($abnormalitiesBusinessHours)
                         <div class="c-contact-banner__hours-exceptions">
-                            <span class="small">
+
+                            @typography([
+                                'element' => "span",
+                                'classList' => ['small']
+                            ])
                                 {{ $abnormalitiesBusinessHours }}
-                            </span>
+                            @endtypography
+
                         </div>
                     @endisset
                 </div>
@@ -75,31 +123,51 @@
 
                                     <div class="c-contact-banner__item-inner">
 
-                                        <h3 class="c-contact-banner__item-title">
-                                            <span class="c-contact-banner__item-icon">
+                                        @typography([
+                                            'element' => "h3",
+                                            'classList' => ['c-contact-banner__item-title']
+                                        ])
+                                            @typography([
+                                                'element' => "span",
+                                                'classList' => ['c-contact-banner__item-icon']
+                                            ])
                                                 {!! $listItem->icon !!}
-                                            </span>
-                                            <span class="c-contact-banner__item-title-inner">
-                                                {{ $listItem->title }}
-                                            </span>
-                                        </h3>
-                                        <p class="c-contact-banner__item-content">
-                                            <span class="c-contact-banner__item-content-inner">
-                                                {{ $listItem->content }}
-                                            </span>
-                                        </p>
-                                        <a
-                                            @isset($listItem->url)
-                                                href="{{ $listItem->url }}"
-                                            @endisset
+                                            @endtypography
 
-                                            @isset($listItem->onclick)
-                                                onclick="{{$listItem->onclick}}"
-                                            @endisset
-                                            class="c-contact-banner__item-cta"
-                                        >
-                                        {{$listItem->label}} <i class="pricon pricon-angle-right"></i>
-                                        </a>
+                                            @typography([
+                                                'element' => "span",
+                                                'classList' => ['c-contact-banner__item-title-inner']
+                                            ])
+                                                {{ $listItem->title }}
+                                            @endtypography
+
+                                        @endtypography
+
+                                        @typography([
+                                            'element' => "p",
+                                            'classList' => ['c-contact-banner__item-content']
+                                        ])
+                                            @typography([
+                                                'element' => "span",
+                                                'classList' => ['c-contact-banner__item-content-inner']
+                                            ])
+                                                {{ $listItem->content }}
+                                            @endtypography
+                                        @endtypography
+
+                                        @link([
+                                            'href' => isset($listItem->url) ?? $listItem->url,
+                                            'attributeList' => ['onclick' => isset($listItem->onclick) ?? $listItem->onclick],
+                                            'classList' => ['c-contact-banner__item-cta']
+                                        ])
+                                            {{$listItem->label}}
+                                            @icon([
+                                                'icon' => 'chevron_right',
+                                                'size' => 'md'
+                                            ])
+                                            @endicon
+                                        @endbutton
+
                                     </div>
                                 </div>
                             @endforeach
@@ -111,7 +179,20 @@
             <!-- More info -->
             @isset($urlMoreInfo)
                 <div class="grid-xs-12">
-                    <a href="{!! $urlMoreInfo !!}" class="c-contact-banner__info">{{ $labelMoreInfo }} <i class="pricon pricon-chevron-right"></i></a>
+
+                    @link([
+                        'href' => $urlMoreInfo,
+                        'classList' => ['c-contact-banner__info']
+                    ])
+                        {{ $labelMoreInfo }}
+                        @icon([
+                            'icon' => 'chevron_right',
+                            'size' => 'md'
+                        ])
+                        @endicon
+
+                    @endbutton
+
                 </div>
             @endisset
 
