@@ -116,7 +116,6 @@ $bp: 899px;
         text-align: right;
 
         i {
-           // font-size: .8em;
             vertical-align: top;
             transition: all 200ms;
             margin-top:-5px;
@@ -179,11 +178,9 @@ $bp: 899px;
         white-space: nowrap;
 
         i {
-            display: inline;
-            font-size: .8em;
-            vertical-align: text-top;
+            vertical-align: top;
             transition: all 200ms;
-            line-height: 1.45em;
+            padding-top: 3px;
         }
 
         &:hover {
