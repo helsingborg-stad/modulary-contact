@@ -116,9 +116,10 @@ $bp: 899px;
         text-align: right;
 
         i {
-            font-size: .8em;
+           // font-size: .8em;
             vertical-align: top;
             transition: all 200ms;
+            margin-top:-5px;
         }
 
         &:hover {
