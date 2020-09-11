@@ -7,12 +7,12 @@
     "type": "git",
     "url": "https://github.com/Svanmark/Wordpress-Plugin-Boilerplate.git"
   },
-  "author": "Nikolas Ramstedt",
+  "author": "Sebastian Thulin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/helsingborg-stad/skyfish-integration/issues"
+    "url": "https://github.com/helsingborg-stad/modularity-contact-banner/issues"
   },
-  "homepage": "https://github.com/helsingborg-stad/skyfish-integration",
+  "homepage": "https://github.com/helsingborg-stad/modularity-contact-banner",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "cross-env NODE_ENV=development webpack --watch",
