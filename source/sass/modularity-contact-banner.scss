@@ -199,4 +199,11 @@ $bp: 899px;
         list-style: none;
         padding-left: 0px;
     }
+    .c-contact-banner__info {
+        color:#fff;
+        text-decoration:none;
+        &:hover {
+            color:#fff;
+        }
+    }
 }
