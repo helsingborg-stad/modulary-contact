@@ -1,9 +1,9 @@
 <div id="contact" class="c-contact-banner">
     <div class="container">
-        <div class="grid">
+        <div class="o-grid">
 
             <!-- Main content -->
-            <div class="grid-md-8">
+            <div class="o-grid-8@md">
                 @if(isset($headerMainContent) && !empty($headerMainContent))
 
                     @typography([
@@ -38,7 +38,7 @@
             </div>
 
             <!-- Business hours -->
-            <div class="grid-md-4">
+            <div class="o-grid-12@xs o-grid-4@md">
 
                 <div class="c-contact-banner__hours">
 
@@ -62,7 +62,7 @@
                         <ul class="c-contact-banner__hours-list">
                             @foreach ($hoursList as $listItem)
 
-                                <li class="c-contact-banner__hours-list-item-{{ $loop->index }}">
+                                <li class="c-contact-banner__hours-list-item c-contact-banner__hours-list-item-{{ $loop->index }}">
 
                                     @typography([
                                         'element' => "span",
@@ -93,8 +93,7 @@
                         <div class="c-contact-banner__hours-exceptions">
 
                             @typography([
-                                'element' => "span",
-                                'classList' => ['small']
+                                'element' => "span"
                             ])
                                 {{ $abnormalitiesBusinessHours }}
                             @endtypography
@@ -113,7 +112,7 @@
             </svg>
 
             <!-- Items -->
-            <div class="grid-xs-12">
+            <div class="o-grid-12">
                 <div class="c-contact-banner__wrapper">
 
                     <div class="c-contact-banner__items">
@@ -157,8 +156,8 @@
                                         @endtypography
 
                                         @link([
-                                            'href' => isset($listItem->url) ?? $listItem->url,
-                                            'attributeList' => ['onclick' => isset($listItem->onclick) ?? $listItem->onclick],
+                                            'href' => $listItem->url,
+                                            'attributeList' => ['onclick' => $listItem->onclick],
                                             'classList' => ['c-contact-banner__item-cta']
                                         ])
                                             {{$listItem->label}}
@@ -179,7 +178,7 @@
 
 <!-- More info -->
 @isset($urlMoreInfo)
-<div class="grid-xs-12">
+<div class="o-grid-12">
 
 @link([
     'href' => $urlMoreInfo,

@@ -51,7 +51,7 @@ class ContactBanner extends \Modularity\Module
         \array_walk($data['hoursList'], function(&$item) {
             $item = (object) $item; 
         });
-
+        
         //Rename array items (cta)
         \array_walk($data['ctaList'], function(&$item) use($fieldNamespace)  {
             $item = $this->renameArrayKey($fieldNamespace . "cta_title", "title", $item); 
