@@ -1,52 +1,24 @@
-$item-padding: 32px;
-$bp: 899px; 
+$item-padding: 16px;
+$bp: 899px;
+.bottom-sidebar .c-contact-banner , .bottom-sidebar .modularity-map-container {
+    width: 100%;
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+
 .c-contact-banner {
 
-    padding: $item-padding*2 0;
-    color: #fff; 
-    background-color: darken($color: #cb0050, $amount: 3%);
-    background: linear-gradient(-100deg, darken(#cb0050, 3%) 0%, darken(#fa1a74,3%) 100%);
-
-    /* Heading & Preamble */ 
-    &__heading {
-        font-size: 1.5em;
-        @media screen and (min-width: #{$bp}) {
-            font-size: 2.3em;
-        }
-    }
-
-    &__preamble {
-        font-size: 1em; 
-        max-width: 550px;
-
-        @media screen and (min-width: #{$bp}) {
-            font-size: 1.2em;
-        }
-    }
-
-    &__heading + &__preamble {
-        margin-top: $item-padding/2;
-    }
-
     /* Items section */
-
     &__wrapper {
-        background: #fff;
-        margin-top: $item-padding;
+
         background: linear-gradient(180deg, rgba(#fff, 1) 0%, rgba(rgb(248, 248, 248),1) 100%);
         border-radius: 12.5px; 
         overflow: hidden;
         box-shadow:
-            0 0.5px 1.8px rgba(0, 0, 0, 0.015),
-            0 1px 3.7px rgba(0, 0, 0, 0.022),
-            0 1.7px 5.8px rgba(0, 0, 0, 0.027),
-            0 2.6px 8.3px rgba(0, 0, 0, 0.031),
-            0 3.8px 11.3px rgba(0, 0, 0, 0.035),
-            0 5.3px 15.2px rgba(0, 0, 0, 0.039),
-            0 7.5px 20.5px rgba(0, 0, 0, 0.043),
-            0 11px 28.8px rgba(0, 0, 0, 0.048),
-            0 16.9px 44px rgba(0, 0, 0, 0.055),
-            0 30px 80px rgba(0, 0, 0, 0.07);
+                0 3.84px 6.4px rgb(0 0 0 / 10%), 0 7.68px 12.8px rgb(0 0 0 / 5%), 0 11.52px 19.2px rgb(0 0 0 / 3%),
+                0 15.36px 25.6px rgb(0 0 0 / 2%), 0 4.8px 8px rgb(0 0 0 / 6%);
     }
 
     &__items {
@@ -59,12 +31,12 @@ $bp: 899px;
     }
 
     &__item {
-        padding: $item-padding $item-padding 0 $item-padding; 
+        padding: $item-padding $item-padding $item-padding;
         display: block;
         color: #000;
         position: relative;
-        flex-basis: 25%;
-        box-shadow: -1px 0px 0px 0px #fff;
+        flex-basis: 35%;
+
     }
 
     &__item + &__item {
@@ -82,6 +54,7 @@ $bp: 899px;
         justify-content: space-between;
         height: 100%;
         font-size: .9em;
+        padding: $item-padding/2;
     }
 
     &__item-content {
@@ -94,6 +67,17 @@ $bp: 899px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+
+        i {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right:2px;
+            margin-top:-3px;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     &__item-title-inner {
@@ -103,7 +87,7 @@ $bp: 899px;
     }
 
     &__item-cta {
-        padding: 24px 0;
+
         display: block;
         text-decoration: none;
         cursor: pointer;
@@ -114,100 +98,5 @@ $bp: 899px;
         text-transform: uppercase;
         border-top: 1px solid #eee;
         text-align: right;
-
-        i {
-            vertical-align: top;
-            transition: all 200ms;
-            margin-top:-5px;
-        }
-
-        &:hover {
-            text-decoration: none;
-
-            i {
-                margin-left: 8px;
-                margin-right: -4px;
-            }
-        }
-    }
-
-    &__item-icon {
-        margin-right: 16px;
-        svg {
-            height: 1.7em;
-            width: 1.7em;
-            fill: url(#c-contact-banner__icon-gradient) #fa1a74;
-        }
-    }
-
-    /* Hours section */ 
-
-    &__hours {
-        font-size: 1.1em;
-        
-
-        @media screen and (min-width: 899px) {
-            padding-left: 24px; 
-            border-left: 4px solid rgba(#fff,.8);
-        }
-
-        h3, ul, div + h3, ul, div {
-            margin-top: 10px;
-        }
-    }
-
-    &__hours-exceptions {
-        font-size: .8em;
-    }
-
-    &__hours-time {
-        padding-left: 8px;
-        display: inline-block;
-    }
-
-    /* Info link */ 
-
-    &__info {
-        font-weight: bold;
-        display: block;
-        font-size: 1.1em;
-        float: right;
-        color: #fff;
-        word-wrap: none;
-        white-space: nowrap;
-        margin-top: -16px;
-
-        i {
-            vertical-align: top;
-            transition: all 200ms;
-            padding-top: 3px;
-        }
-
-        &:hover {
-            text-decoration: none;
-
-            i {
-                margin-left: 8px;
-                margin-right: -4px;
-            }
-        }
-    }
-    .c-contact-banner__hours-list {
-        list-style: none;
-        padding-left: 0px;
-        font-size: .9em;
-    }
-
-    .c-contact-banner__hours-list-item {
-        padding-left: 0;
-        margin-top: 0;
-    }
-
-    .c-contact-banner__info {
-        color:#fff;
-        text-decoration:none;
-        &:hover {
-            color:#fff;
-        }
     }
 }
