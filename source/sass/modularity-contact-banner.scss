@@ -14,6 +14,30 @@
     .c-card {
         width: 35%;
         flex-direction: column;
+    }
 
+    @media screen and (max-width: 896px) {
+
+        .c-group {
+            margin: 0 4px;
+            margin-top: -32px;
+            display: block;
+        }
+
+        .c-card {
+            width:100%;
+
+        }
+
+        .card-item-0 {
+            border-top-right-radius: var(--radius-lg, calc(var(--base, 8px)*1.5));
+            border-bottom-left-radius: unset;
+        }
+
+        .card-item-2 {
+            border-top-right-radius: unset;
+            border-bottom-left-radius: var(--radius-lg, calc(var(--base, 8px)*1.5));;
+            border-bottom-right-radius: var(--radius-lg, calc(var(--base, 8px)*1.5));;
+        }
     }
 }
