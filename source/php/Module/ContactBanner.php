@@ -27,31 +27,11 @@ class ContactBanner extends \Modularity\Module
     public function data() : array
     {
         $data = array();
-        $postId = $this->ID;
         $fieldNamespace = 'mod_contactbanner_';
 
-        //Map module data to camel case vars 
-        $data['headerMainContent']          = get_the_title($postId);
-        $data['mainContent']                = get_field($fieldNamespace . 'main_content', $postId);
-        $data['headerBusinessHours']        = get_field($fieldNamespace . 'header_business_hours', $postId);
-        $data['abnormalitiesBusinessHours'] = get_field($fieldNamespace . 'abnormalities_business_hours', $postId);
-        $data['hoursList']                  = get_field($fieldNamespace . 'hours_list', $postId);
-        $data['ctaList']                    = get_field($fieldNamespace . 'cta_list', $postId);
-        $data['labelMoreInfo']              = get_field($fieldNamespace . 'label_more_info', $postId);
-        $data['urlMoreInfo']                = get_field($fieldNamespace . 'url_more_info', $postId);
+        //Map module data to camel case vars
+        $data['ctaList'] = get_field($fieldNamespace . 'cta_list', $this->ID);
 
-        //Rename array items (hours)
-        \array_walk($data['hoursList'], function(&$item) use($fieldNamespace)  {
-            $item = $this->renameArrayKey($fieldNamespace . "weekdays", "weekdays", $item); 
-            $item = $this->renameArrayKey($fieldNamespace . "hours_from", "from", $item); 
-            $item = $this->renameArrayKey($fieldNamespace . "hours_to", "to", $item); 
-        });
-
-        //Format as objects
-        \array_walk($data['hoursList'], function(&$item) {
-            $item = (object) $item; 
-        });
-        
         //Rename array items (cta)
         \array_walk($data['ctaList'], function(&$item) use($fieldNamespace)  {
             $item = $this->renameArrayKey($fieldNamespace . "cta_title", "title", $item); 
@@ -67,27 +47,7 @@ class ContactBanner extends \Modularity\Module
             $item = (object) $item; 
         });
 
-        //Get file content for icons
-        \array_walk($data['ctaList'], function(&$item) {
-            if(is_numeric($item->icon)) {
-                $item->icon = $this->getIconData($item->icon); 
-            }
-        });
-
         return $data;
-    }
-
-    /**
-     * Get icon file data 
-     * @return string
-     */
-    private function getIconData($iconId) {
-        if($filePath = get_attached_file($iconId)) {
-            if(file_exists($filePath)) {
-                return file_get_contents($filePath);
-            }
-        }
-        return ""; 
     }
 
     /**

@@ -3,141 +3,6 @@
     "title": "Modularity Contact Banner",
     "fields": [
         {
-            "key": "field_5e1d90c31ee10",
-            "label": "Main content",
-            "name": "mod_contactbanner_main_content",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 3,
-            "new_lines": ""
-        },
-        {
-            "key": "field_5e1e26c283a52",
-            "label": "Header - Business hours",
-            "name": "mod_contactbanner_header_business_hours",
-            "type": "text",
-            "instructions": "Enter business hours header",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5e1e309814335",
-            "label": "Hours list",
-            "name": "mod_contactbanner_hours_list",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "row",
-            "button_label": "Add business weekdays and hours",
-            "sub_fields": [
-                {
-                    "key": "field_5e1e315214337",
-                    "label": "Weekdays",
-                    "name": "mod_contactbanner_weekdays",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5e1e318814338",
-                    "label": "Hours from",
-                    "name": "mod_contactbanner_hours_from",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 5
-                },
-                {
-                    "key": "field_5e1e31bf14339",
-                    "label": "Hours to",
-                    "name": "mod_contactbanner_hours_to",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 5
-                }
-            ]
-        },
-        {
-            "key": "field_5e1e28733a316",
-            "label": "Abnormalities - Business hours",
-            "name": "mod_contactbanner_abnormalities_business_hours",
-            "type": "text",
-            "instructions": "Enter business hours abnormalities",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5e1ed6113cdb8",
             "label": "Call to action icon list",
             "name": "mod_contactbanner_cta_list",
@@ -151,8 +16,8 @@
                 "id": ""
             },
             "collapsed": "",
-            "min": 4,
-            "max": 4,
+            "min": 3,
+            "max": 3,
             "layout": "block",
             "button_label": "Add item",
             "sub_fields": [
@@ -179,32 +44,8 @@
                     "key": "field_5e1ed6cd3cdba",
                     "label": "Icon",
                     "name": "mod_contactbanner_cta_icon",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "svg"
-                },
-                {
-                    "key": "field_5e1ed7603cdbb",
-                    "label": "Content",
-                    "name": "mod_contactbanner_cta_content",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "You can find the icons we use at following address:\r\nhttp:\/\/v2.styleguide.helsingborg.se\/icons\r\n\r\nJust click the icon to copy or copy the icon name and paste the icon name here.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -217,6 +58,25 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5e1ed7603cdbb",
+                    "label": "Content",
+                    "name": "mod_contactbanner_cta_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_5e1ed76b3cdbc",
@@ -276,44 +136,6 @@
                     "maxlength": ""
                 }
             ]
-        },
-        {
-            "key": "field_5e2011ed67f61",
-            "label": "Label - More info (Footer)",
-            "name": "mod_contactbanner_label_more_info",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5e2012c96a110",
-            "label": "Url - More info (Footer)",
-            "name": "mod_contactbanner_url_more_info",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": "",
-            "taxonomy": "",
-            "allow_null": 0,
-            "allow_archives": 1,
-            "multiple": 0
         }
     ],
     "location": [
