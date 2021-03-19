@@ -13,6 +13,7 @@
     .c-card {
         width: 35%;
         flex-direction: column;
+        box-shadow: none;
     }
 
     @media screen and (max-width: 896px) {

@@ -1,7 +1,7 @@
 <div id="contact" class="c-contact-banner u-print-display--none">
 
     @if(isset($ctaList) && !empty($ctaList))
-        @group
+        @group(['classList' => ['u-box-shadow--2']])
             @foreach ($ctaList as $index => $listItem)
                 @card([
                     'classList' => [
