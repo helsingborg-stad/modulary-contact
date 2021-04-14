@@ -8,6 +8,8 @@
 .c-contact-banner {
     .c-group {
         margin: 0 16px;
+        border-radius: var(--radius-lg,calc(var(--base, 8px)*1.5));
+        overflow: hidden;
     }
 
     .c-card {
@@ -15,12 +17,9 @@
         flex-direction: column;
         box-shadow: none;
         border-right: 1px solid #E5E5E5;
+        border-radius: 0px;
     }
-
-    .c-card__header {
-        background: none;
-    }
-
+    
     @media screen and (max-width: 896px) {
 
         .c-group {
@@ -32,17 +31,6 @@
         .c-card {
             width:100%;
 
-        }
-
-        .card-item-0 {
-            border-top-right-radius: var(--radius-lg, calc(var(--base, 8px)*1.5));
-            border-bottom-left-radius: unset;
-        }
-
-        .card-item-2 {
-            border-top-right-radius: unset;
-            border-bottom-left-radius: var(--radius-lg, calc(var(--base, 8px)*1.5));;
-            border-bottom-right-radius: var(--radius-lg, calc(var(--base, 8px)*1.5));;
         }
     }
 }
