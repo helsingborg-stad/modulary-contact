@@ -21,6 +21,10 @@
         border-radius: 0px;
     }
 
+    .c-card__body {
+        flex-grow: 1;
+    }
+
     .c-card__header {
         i, h4 {
             display: inline-block;
