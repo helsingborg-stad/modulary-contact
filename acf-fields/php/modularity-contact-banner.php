@@ -20,7 +20,7 @@
             ),
             'collapsed' => '',
             'min' => 3,
-            'max' => 3,
+            'max' => 4,
             'layout' => 'block',
             'button_label' => __('Add item', 'modularity-contact-banner'),
             'sub_fields' => array(
