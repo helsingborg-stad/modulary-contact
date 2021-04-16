@@ -36,26 +36,28 @@
                         {!! $listItem->content !!}
                     </div>
 
-                    <div class="c-card__footer c-contact-banner__footer u-padding--2">
-                        @button([
-                            'text' => $listItem->label,
-                            'color' => 'default',
-                            'style' => 'basic',
-                            'icon' => 'arrow_forward',
-                            'href' => !empty($listItem->url) ? $listItem->url : '',
-                            'attributeList' => [
-                                'onclick' => !empty($listItem->onclick) ? 'action'.$index.'()' : ''
-                            ]
-                        ])
-                        @endbutton
+                    @if($listItem->displayCta)
+                        <div class="c-card__footer c-contact-banner__footer u-padding--2">
+                            @button([
+                                'text' => $listItem->label,
+                                'color' => 'default',
+                                'style' => 'basic',
+                                'icon' => 'arrow_forward',
+                                'href' => !empty($listItem->url) ? $listItem->url : '',
+                                'attributeList' => [
+                                    'onclick' => !empty($listItem->onclick) ? 'action'.$index.'()' : ''
+                                ]
+                            ])
+                            @endbutton
 
-                        @if (!empty($listItem->onclick))
-                        <script>function action{!! $index !!}() {
-                            {!! $listItem->onclick !!}
-                        }</script>
-                        @endif
-                    </div>
-  
+                            @if (!empty($listItem->onclick))
+                            <script>function action{!! $index !!}() {
+                                {!! $listItem->onclick !!}
+                            }</script>
+                            @endif
+                        </div>
+                    @endif
+    
                 @endcard
             @endforeach
         @endgroup

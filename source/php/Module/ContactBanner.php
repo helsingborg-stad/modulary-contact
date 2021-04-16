@@ -47,6 +47,22 @@ class ContactBanner extends \Modularity\Module
             $item = (object) $item; 
         });
 
+        //Add visual booleans for cta
+        \array_walk($data['ctaList'], function(&$item) {
+
+            //Default value
+            $item->displayCta = true; 
+
+            //If label is missing, hide
+            if(empty($item->label)) {
+                $item->displayCta = false; 
+            }
+
+            if($item->displayCta && ($item->onclick == "" && $item->url = "")) {
+                $item->displayCta = false; 
+            }
+        });
+
         return $data;
     }
 
