@@ -13,7 +13,7 @@
                     'context' => 'contactbanner'
                 ])
 
-                    <div class="c-card__header u-padding__x--4 u-padding__top--3">
+                    <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
                         @icon([
                             'icon' => $listItem->icon, 
                             'size' => 'md',
@@ -32,7 +32,7 @@
                         @endtypography
                     </div>
 
-                    <div class="c-card__body u-padding--4">
+                    <div class="c-card__body u-padding__x--4 u-padding__top--1 u-padding__bottom--3">
                         {!! $listItem->content !!}
                     </div>
 
