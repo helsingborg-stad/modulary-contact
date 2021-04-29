@@ -28,9 +28,14 @@ class ContactBanner extends \Modularity\Module
     {
         $data = array();
         $fieldNamespace = 'mod_contactbanner_';
+        $fields = get_fields($this->ID);
 
         //Map module data to camel case vars
-        $data['ctaList'] = get_field($fieldNamespace . 'cta_list', $this->ID);
+        $data['ctaList'] = $fields[$fieldNamespace . 'cta_list'];
+        $data['mainContent'] = $fields['main_content'];
+        $data['openingHours'] = $this->getOpeningHours($fields['opening_hours']);        
+        $data['title'] = get_the_title($this->ID);
+        
 
         //Rename array items (cta)
         \array_walk($data['ctaList'], function(&$item) use($fieldNamespace)  {
@@ -64,6 +69,14 @@ class ContactBanner extends \Modularity\Module
         });
 
         return $data;
+    }
+
+    private function getOpeningHours($openingHours) {
+        foreach($openingHours as &$openingHour) {
+            $openingHour = $openingHour['weekdays'] . ' ' . $openingHour['hours_from'] . '-' . $openingHour['hours_to'];
+        }
+
+        return $openingHours;
     }
 
     /**

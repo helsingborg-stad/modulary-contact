@@ -1,5 +1,25 @@
 <div id="contact" class="c-contact-banner u-print-display--none">
-
+    <div class="pre-cta">
+        <div class="main-content">
+            @typography(['element' => 'h1', 'variant' => 'h1'])
+                {{$title}}
+            @endtypography
+            <p>
+                {{$mainContent}}
+            </p>
+        </div>
+    
+        <div class="opening-hours">
+            @typography(['element' => 'p', 'variant' => 'h3'])
+                Opening hours
+            @endtypography                
+            @foreach($openingHours as $openingHour)                
+                @typography(['element' => 'p', 'variant' => 'p'])
+                    {{$openingHour}}
+                @endtypography
+            @endforeach          
+        </div>
+    </div>
     @if(isset($ctaList) && !empty($ctaList))
         @group(['classList' => ['u-box-shadow--2']])
             @foreach ($ctaList as $index => $listItem)
