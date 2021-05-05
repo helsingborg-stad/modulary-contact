@@ -23,15 +23,21 @@
 
     .c-card__body {
         flex-grow: 1;
+        font-weight: 500;
+        color: var(--color-darkest, #3d3d3d);
     }
 
     .c-card__header {
+        margin-bottom: 24px;
+
         i, h4 {
             display: inline-block;
             vertical-align: middle;
         }
 
         h4 {
+            font-size: 24px;
+            font-weight: 700;
             margin-top: 0px;
         }
     }
