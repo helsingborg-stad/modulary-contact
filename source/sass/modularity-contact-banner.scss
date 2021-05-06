@@ -2,14 +2,23 @@
     width: 100%;
     max-width: 1248px;
     margin: 0 auto;
-    padding: 0 8px;
+
+    .c-group {
+        margin: 0 calc(var(--base, 8px) * 7);
+    }
+
+    @media screen and (min-width: 896px) {
+        .c-group {
+            margin: 0 calc(var(--base, 8px) * 3);
+        }
+    }
 }
 
 .c-contact-banner {
     .c-group {
-        margin: 0 16px;
         border-radius: var(--radius-lg,calc(var(--base, 8px)*1.5));
         overflow: hidden;
+        margin-bottom: calc(var(--base, 8px) * 8);
     }
 
     .c-card {
@@ -45,8 +54,6 @@
     @media screen and (max-width: 896px) {
 
         .c-group {
-            margin: 0 4px;
-            margin-top: -32px;
             display: block;
         }
 
