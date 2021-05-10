@@ -16,7 +16,7 @@
                     <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
                         @icon([
                             'icon' => $listItem->icon, 
-                            'size' => 'lg',
+                            'size' => 'md',
                             'color' => 'primary'
                         ])
                         @endicon
