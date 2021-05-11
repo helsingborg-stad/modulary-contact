@@ -3,6 +3,237 @@
     "title": "Modularity Contact Banner",
     "fields": [
         {
+            "key": "field_609a4bd6da499",
+            "label": "Display Options",
+            "name": "mod_contactbanner_display_options",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "main_content": "Main Content",
+                "open_hours": "Open Hours"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_609a423160be0",
+            "label": "Main content",
+            "name": "mod_contactbanner_main_content",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609a4bd6da499",
+                        "operator": "==",
+                        "value": "main_content"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_609a44af3c871",
+            "label": "Header - Business hours",
+            "name": "mod_contactbanner_header_business_hours",
+            "type": "text",
+            "instructions": "Enter business hours header",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609a4bd6da499",
+                        "operator": "==",
+                        "value": "open_hours"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_609a482679912",
+            "label": "Hours list",
+            "name": "mod_contactbanner_hours_list",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609a4bd6da499",
+                        "operator": "==",
+                        "value": "open_hours"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_609a488179913",
+                    "label": "Weekdays",
+                    "name": "mod_contactbanner_weekdays",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_609a488d79914",
+                    "label": "Hours from",
+                    "name": "mod_contactbanner_hours_from",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 5
+                },
+                {
+                    "key": "field_609a48db79915",
+                    "label": "Hours to",
+                    "name": "mod_contactbanner_hours_to",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 5
+                }
+            ]
+        },
+        {
+            "key": "field_609a8a4e0fce9",
+            "label": "Abnormalities - Business hours",
+            "name": "mod_contactbanner_abnormalities_business_hours",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_609a4bd6da499",
+                        "operator": "==",
+                        "value": "open_hours"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_609a8aa20fcea",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "Leave empty if you don't want to use this option",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_609a8ac30fceb",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "Leave empty if you don't want to use this option",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609a8aa20fcea",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
             "key": "field_5e1ed6113cdb8",
             "label": "Call to action icon list",
             "name": "mod_contactbanner_cta_list",
