@@ -85,14 +85,12 @@ $base: var(--base, 8px);
     .c-card__header {
         margin-bottom: calc(#{$base} * 3);
 
-        i, h4 {
+        i, h3 {
             display: inline-block;
             vertical-align: middle;
         }
 
-        h4 {
-            font-size: calc(#{$base} * 3);
-            font-weight: 700;
+        h3 {
             margin-top: 0px;
         }
     }
