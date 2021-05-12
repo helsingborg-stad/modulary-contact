@@ -1,4 +1,4 @@
-$base: 8px;
+$base: var(--base, 8px);
 
 .bottom-sidebar .c-contact-banner , .bottom-sidebar .modularity-map-container {
     width: 100%;
@@ -6,12 +6,12 @@ $base: 8px;
     margin: 0 auto;
 
     .c-group {
-        margin: 0 calc(var(--base, 8px) * 7);
+        margin: 0 calc(#{$base} * 7);
     }
 
     @media screen and (min-width: 896px) {
         .c-group {
-            margin: 0 calc(var(--base, 8px) * 3);
+            margin: 0 calc(#{$base} * 3);
         }
     }
 }
@@ -37,7 +37,7 @@ $base: 8px;
     }
 
     &__hours {
-        margin-top: 32px;
+        margin-top: calc(#{$base} * 4);
 
         p:not(:first-of-type) {
             margin-top: 0;
@@ -62,9 +62,9 @@ $base: 8px;
     }
 
     .c-group {
-        border-radius: var(--radius-lg,calc(var(--base, 8px)*1.5));
+        border-radius: var(--radius-lg, calc(#{$base} * 1.5));
         overflow: hidden;
-        margin-bottom: calc(var(--base, 8px) * 8);
+        margin-bottom: calc(#{$base} * 8);
     }
 
     .c-card {
@@ -72,7 +72,7 @@ $base: 8px;
         display: flex;
         flex-direction: column;
         box-shadow: none;
-        border-right: 1px solid #E5E5E5;
+        border-right: 1px solid  var(--color-lighter, #E5E5E5);
         border-radius: 0px;
     }
 
@@ -83,7 +83,7 @@ $base: 8px;
     }
 
     .c-card__header {
-        margin-bottom: 24px;
+        margin-bottom: calc(#{$base} * 3);
 
         i, h4 {
             display: inline-block;
@@ -91,7 +91,7 @@ $base: 8px;
         }
 
         h4 {
-            font-size: 24px;
+            font-size: calc(#{$base} * 3);
             font-weight: 700;
             margin-top: 0px;
         }
