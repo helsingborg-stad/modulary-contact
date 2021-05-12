@@ -1,24 +1,70 @@
+$base: var(--base, 8px);
+
 .bottom-sidebar .c-contact-banner , .bottom-sidebar .modularity-map-container {
     width: 100%;
     max-width: 1248px;
     margin: 0 auto;
 
     .c-group {
-        margin: 0 calc(var(--base, 8px) * 7);
+        margin: 0 calc(#{$base} * 7);
     }
 
     @media screen and (min-width: 896px) {
         .c-group {
-            margin: 0 calc(var(--base, 8px) * 3);
+            margin: 0 calc(#{$base} * 3);
         }
     }
 }
 
 .c-contact-banner {
+
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 calc(#{$base} * 4);
+        margin: calc(#{$base} * 6) 0;
+    }
+
+    &__title {
+        font-size: calc(#{$base} * 4.5);
+        font-weight: 900;
+        color: var(--color-mono-darkest, #3D3D3D);
+    }
+
+    &__text {
+        font-weight: 500;
+        color: var(--color-mono-darkest, #3D3D3D);
+    }
+
+    &__hours {
+        margin-top: calc(#{$base} * 4);
+
+        p:not(:first-of-type) {
+            margin-top: 0;
+        }
+    }
+
+    &__hours-title,
+    &__weekdays {
+        font-weight: 700;
+    }
+
+    &__hours-title {
+        font-size: 18px;
+    }
+
+    &__weekdays {
+        font-size: 16px;
+    }
+
+    &__abnormal-hours {
+        font-size: 14px;
+    }
+
     .c-group {
-        border-radius: var(--radius-lg,calc(var(--base, 8px)*1.5));
+        border-radius: var(--radius-lg, calc(#{$base} * 1.5));
         overflow: hidden;
-        margin-bottom: calc(var(--base, 8px) * 8);
+        margin-bottom: calc(#{$base} * 8);
     }
 
     .c-card {
@@ -26,7 +72,7 @@
         display: flex;
         flex-direction: column;
         box-shadow: none;
-        border-right: 1px solid #E5E5E5;
+        border-right: 1px solid  var(--color-lighter, #E5E5E5);
         border-radius: 0px;
     }
 
@@ -37,21 +83,19 @@
     }
 
     .c-card__header {
-        margin-bottom: 24px;
+        margin-bottom: calc(#{$base} * 3);
 
-        i, h4 {
+        i, h3 {
             display: inline-block;
             vertical-align: middle;
         }
 
-        h4 {
-            font-size: 18px;
+        h3 {
             margin-top: 0px;
         }
     }
     
     @media screen and (max-width: 896px) {
-
         .c-group {
             display: block;
         }
@@ -59,6 +103,27 @@
         .c-card {
             width:100%;
 
+        }
+    }
+
+    @media screen and (min-width: 896px) {
+
+        &__info-container {
+            flex-direction: row;
+        }
+
+        &__hours {
+            max-width: 30%;
+            margin-top: 0;
+            margin-left: auto;
+            border-left: 2px solid var(--color-mono-lighter, #E5E5E5);
+            padding-left: calc(#{$base} * 3);
+        }
+
+        &__content {
+            max-width: 50%;
+            height: max-content;
+            margin: auto 0;
         }
     }
 }

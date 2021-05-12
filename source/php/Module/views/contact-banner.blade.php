@@ -1,4 +1,74 @@
 <div id="contact" class="c-contact-banner u-print-display--none">
+    <div class="c-contact-banner__info-container">
+        <div class="c-contact-banner__content">
+            @if (!$hideTitle && !empty($post_title))
+                @typography([
+                    "element" => "h2",
+                    "classList" => [
+                        "c-contact-banner__title"
+                    ]
+                ])
+                    {!! apply_filters('the_title', $post_title) !!}
+                @endtypography
+            @endif
+
+
+            @if(!$hideMainContent && !empty($mainContent))
+                @typography([
+                    "element" => "p",
+                    "classList" => [
+                        "c-contact-banner__text"
+                    ]
+                ])
+                    {!! $mainContent !!}
+                @endtypography
+            @endif
+
+        </div>
+
+        <div class="c-contact-banner__hours">
+            @if(!$hideBusinessHours && !empty($headerBusinessHours))
+                @typography([
+                    "element" => "h4",
+                    "classList" => [
+                        "c-contact-banner__hours-title"
+                    ]
+                ])
+                    {!! $headerBusinessHours !!}
+                @endtypography
+
+                @foreach ($openHours as $openHour)
+                @typography([
+                    "element" => "p"
+                ])
+                    {!! $openHour !!}
+                @endtypography
+                    
+                @endforeach
+            @endif
+
+            @if($abnormalHours)
+                @if ($abnormalHours['link'])
+                @link([
+                    'href' => $abnormalHours['link']
+                ])
+                @endif
+
+                @typography([
+                        "element" => "p",
+                        "classList" => [
+                            "c-contact-banner__abnormal-hours"
+                        ]
+                    ])
+                        {!! $abnormalHours[text] !!}
+                @endtypography
+
+                @if ($abnormalHours['link'])
+                @endlink
+                @endif
+            @endif
+        </div>
+    </div>
 
     @if(isset($ctaList) && !empty($ctaList))
         @group(['classList' => ['u-box-shadow--2']])

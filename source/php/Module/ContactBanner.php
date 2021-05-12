@@ -29,6 +29,26 @@ class ContactBanner extends \Modularity\Module
         $data = array();
         $fieldNamespace = 'mod_contactbanner_';
 
+        $data['mainContent'] = get_field($fieldNamespace . 'main_content', $this->ID);
+        $data['headerBusinessHours'] = get_field($fieldNamespace . 'header_business_hours', $this->ID);
+        $data['displayOptions'] = (array) get_field($fieldNamespace . 'display_options', $this->ID);
+        $data['hours'] = (array) get_field($fieldNamespace . 'hours_list', $this->ID);
+
+        $data['openHours'] = array();
+
+        foreach ($data['hours'] as $key => $time) {
+            $data['openHours'][] = "<span class='c-contact-banner__weekdays'>{$time['mod_contactbanner_weekdays']}:</span> {$time['mod_contactbanner_hours_from']} - {$time['mod_contactbanner_hours_to']}";
+        }
+
+        $data['abnormalHours'] = get_field($fieldNamespace . 'abnormalities_business_hours', $this->ID);
+
+        if(empty($data['abnormalHours']['text'])) {
+            $data['abnormalHours'] = false;
+        }
+
+        $data['hideMainContent'] = !in_array('main_content', $data['displayOptions']);
+        $data['hideBusinessHours'] = !in_array('open_hours', $data['displayOptions']);
+
         //Map module data to camel case vars
         $data['ctaList'] = get_field($fieldNamespace . 'cta_list', $this->ID);
 
