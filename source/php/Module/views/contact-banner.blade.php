@@ -93,9 +93,9 @@
     
                         @typography([
                             'element' => 'h4',
-                            'variant' => 'p',
+                            'variant' => 'h3',
                             'id'      => 'mod-contactbanner-' . $id,
-                            'classList' => ['u-margin__left--2']
+                            'classList' => ['u-margin__left--1']
                         ])
     
                         {{$listItem->title}}
