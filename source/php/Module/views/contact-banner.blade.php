@@ -12,7 +12,6 @@
                 @endtypography
             @endif
 
-
             @if(!$hideMainContent && !empty($mainContent))
                 @typography([
                     "element" => "p",
@@ -26,8 +25,9 @@
 
         </div>
 
+        @if(!$hideBusinessHours && !empty($headerBusinessHours))
         <div class="c-contact-banner__hours">
-            @if(!$hideBusinessHours && !empty($headerBusinessHours))
+            
                 @typography([
                     "element" => "h4",
                     "classList" => [
@@ -45,7 +45,7 @@
                 @endtypography
                     
                 @endforeach
-            @endif
+            
 
             @if($abnormalHours)
                 @if ($abnormalHours['link'])
@@ -68,6 +68,7 @@
                 @endif
             @endif
         </div>
+        @endif
     </div>
 
     @if(isset($ctaList) && !empty($ctaList))
