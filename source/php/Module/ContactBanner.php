@@ -48,7 +48,8 @@ class ContactBanner extends \Modularity\Module
 
         $data['hideMainContent'] = !in_array('main_content', $data['displayOptions']);
         $data['hideBusinessHours'] = !in_array('open_hours', $data['displayOptions']);
-
+        $data['hideContentArea'] = $this->hideContentArea($data); 
+    
         //Map module data to camel case vars
         $data['ctaList'] = get_field($fieldNamespace . 'cta_list', $this->ID);
 
@@ -84,6 +85,21 @@ class ContactBanner extends \Modularity\Module
         });
 
         return $data;
+    }
+
+    /**
+     * Tells wheter to show content area or not
+     *
+     * @param array $data
+     * @return void
+     */
+    private function hideContentArea($data) {
+
+        if(!empty($data['displayOptions'])) {
+            return false; 
+        }
+
+        return true; 
     }
 
     /**

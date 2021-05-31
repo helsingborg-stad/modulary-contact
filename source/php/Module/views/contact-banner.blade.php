@@ -1,16 +1,19 @@
 <div id="contact" class="c-contact-banner u-print-display--none">
-    <div class="c-contact-banner__info-container">
-        <div class="c-contact-banner__content">
-            @if (!$hideTitle && !empty($post_title))
-                @typography([
-                    "element" => "h2",
-                    "classList" => [
-                        "c-contact-banner__title"
-                    ]
-                ])
-                    {!! apply_filters('the_title', $post_title) !!}
-                @endtypography
-            @endif
+
+    @if(!$hideContentArea || (!$hideTitle && !empty($post_title)))
+        <div class="c-contact-banner__info-container">
+            <div class="c-contact-banner__content">
+                @if (!$hideTitle && !empty($post_title))
+                    @typography([
+                        "element" => "h2",
+                        "classList" => [
+                            "c-contact-banner__title"
+                        ]
+                    ])
+                        {!! apply_filters('the_title', $post_title) !!}
+                    @endtypography
+                @endif
+
 
             @if(!$hideMainContent && !empty($mainContent))
                 @typography([
@@ -23,53 +26,54 @@
                 @endtypography
             @endif
 
-        </div>
+            </div>
 
-        @if(!$hideBusinessHours && !empty($headerBusinessHours))
-        <div class="c-contact-banner__hours">
+            @if(!$hideBusinessHours && !empty($headerBusinessHours))
             
-                @typography([
-                    "element" => "h4",
-                    "classList" => [
-                        "c-contact-banner__hours-title"
-                    ]
-                ])
-                    {!! $headerBusinessHours !!}
-                @endtypography
+                <div class="c-contact-banner__hours">
 
-                @foreach ($openHours as $openHour)
-                @typography([
-                    "element" => "p"
-                ])
-                    {!! $openHour !!}
-                @endtypography
-                    
-                @endforeach
-            
-
-            @if($abnormalHours)
-                @if ($abnormalHours['link'])
-                @link([
-                    'href' => $abnormalHours['link']
-                ])
-                @endif
-
-                @typography([
-                        "element" => "p",
+                    <!-- Header for business hours -->
+                    @typography([
+                        "element" => "h4",
                         "classList" => [
-                            "c-contact-banner__abnormal-hours"
+                            "c-contact-banner__hours-title"
                         ]
                     ])
-                        {!! $abnormalHours[text] !!}
-                @endtypography
+                        {!! $headerBusinessHours !!}
+                    @endtypography
 
-                @if ($abnormalHours['link'])
-                @endlink
-                @endif
+                    <!-- Time & date list -->
+                    @if($openHours)
+                        @foreach ($openHours as $openHour)
+                            @typography([
+                                "element" => "p"
+                            ])
+                                {!! $openHour !!}
+                            @endtypography 
+                        @endforeach
+                    @endif
+
+                    <!-- Abnormal link message --> 
+                    @if($abnormalHours)
+                        @link([
+                            'href' => $abnormalHours['link'], 
+                            'keepContent' => true
+                        ])
+                            @typography([
+                                    "element" => "p",
+                                    "classList" => [
+                                        "c-contact-banner__abnormal-hours"
+                                    ]
+                                ])
+                                    {!! $abnormalHours['text'] !!}
+                            @endtypography
+                        @endlink
+                    @endif
+
+                </div>
             @endif
         </div>
-        @endif
-    </div>
+    @endif
 
     @if(isset($ctaList) && !empty($ctaList))
         @group(['classList' => ['u-box-shadow--2']])
