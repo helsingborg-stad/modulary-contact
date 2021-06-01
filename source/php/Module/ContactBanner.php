@@ -12,6 +12,7 @@ class ContactBanner extends \Modularity\Module
 {
     public $slug = 'contact-banner';
     public $supports = array();
+    public $isBlockCompatible = false;
 
     public function init()
     {
