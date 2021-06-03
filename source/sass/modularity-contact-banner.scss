@@ -29,7 +29,9 @@ $base: var(--base, 8px);
         font-size: calc(#{$base} * 4.5);
         font-weight: 900;
         color: var(--color-mono-darkest, #3D3D3D);
-        margin-top: -0.2em;
+        &:first-child {
+            margin-top: -0.2em;
+        }
     }
 
     &__text {
