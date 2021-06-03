@@ -21,7 +21,7 @@ $base: var(--base, 8px);
     &__info-container {
         display: flex;
         flex-direction: column;
-        padding: 0 calc(#{$base} * 4);
+        padding: 0 calc(#{$base} * 3);
         margin: calc(#{$base} * 6) 0;
     }
 
@@ -29,6 +29,7 @@ $base: var(--base, 8px);
         font-size: calc(#{$base} * 4.5);
         font-weight: 900;
         color: var(--color-mono-darkest, #3D3D3D);
+        margin-top: -0.2em;
     }
 
     &__text {
@@ -123,7 +124,7 @@ $base: var(--base, 8px);
         &__content {
             max-width: 50%;
             height: max-content;
-            margin: auto 0;
+            margin: 0;
         }
     }
 }
