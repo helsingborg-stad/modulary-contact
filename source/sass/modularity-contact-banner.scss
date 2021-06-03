@@ -21,7 +21,7 @@ $base: var(--base, 8px);
     &__info-container {
         display: flex;
         flex-direction: column;
-        padding: 0 calc(#{$base} * 3);
+        padding: 0 calc(#{$base} * 4);
         margin: calc(#{$base} * 6) 0;
     }
 
