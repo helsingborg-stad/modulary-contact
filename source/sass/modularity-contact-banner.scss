@@ -127,3 +127,16 @@ $base: var(--base, 8px);
         }
     }
 }
+
+.s-footer {
+    .c-card__header {
+        h4 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .c-icon {
+            font-size: calc(#{$base}*4);
+        }
+    }
+}
