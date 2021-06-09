@@ -80,10 +80,12 @@ class ContactBanner extends \Modularity\Module
                 $item->displayCta = false; 
             }
 
-            if($item->displayCta && ($item->onclick == "" && $item->url = "")) {
+            if($item->displayCta && ($item->onclick == "" && $item->url == "")) {
                 $item->displayCta = false; 
             }
         });
+
+        var_dump($data); 
 
         return $data;
     }
