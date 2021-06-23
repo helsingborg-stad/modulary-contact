@@ -89,12 +89,15 @@
                 ])
 
                     <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
-                        @icon([
-                            'icon' => $listItem->icon, 
-                            'size' => 'md',
-                            'color' => 'primary'
-                        ])
-                        @endicon
+                        
+                        @if($listItem->icon)
+                            @icon([
+                                'icon' => $listItem->icon, 
+                                'size' => 'md',
+                                'color' => 'primary'
+                            ])
+                            @endicon
+                        @endif
     
                         @typography([
                             'element' => 'h4',
