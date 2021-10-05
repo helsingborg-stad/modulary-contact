@@ -103,7 +103,7 @@
                             'element' => 'h4',
                             'variant' => 'h3',
                             'id'      => 'mod-contactbanner-' . $id,
-                            'classList' => ['u-margin__left--1']
+                            'classList' => ['u-margin__left--2']
                         ])
     
                         {{$listItem->title}}
