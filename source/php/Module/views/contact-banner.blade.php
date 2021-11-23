@@ -81,6 +81,7 @@
                 @card([
                     'classList' => [
                         'card-item-'.$index,
+                        'u-box-shadow--0'
                     ],
                         'attributeList' => [
                         'aria-labelledby' => 'mod-contactbanner-' . $id
