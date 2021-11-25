@@ -17,6 +17,7 @@ $base: var(--base, 8px);
 }
 
 .c-contact-banner {
+    margin-bottom: calc(#{$base} * 8);
 
     &__info-container {
         display: flex;
@@ -62,12 +63,6 @@ $base: var(--base, 8px);
 
     &__abnormal-hours {
         font-size: 14px;
-    }
-
-    .c-group {
-        border-radius: var(--radius-lg, calc(#{$base} * 1.5));
-        overflow: hidden;
-        margin-bottom: calc(#{$base} * 8);
     }
 
     .c-card {
