@@ -37,8 +37,10 @@ class ContactBanner extends \Modularity\Module
 
         $data['openHours'] = array();
 
-        foreach ($data['hours'] as $key => $time) {
-            $data['openHours'][] = "<span class='c-contact-banner__weekdays'>{$time['mod_contactbanner_weekdays']}:</span> {$time['mod_contactbanner_hours_from']} - {$time['mod_contactbanner_hours_to']}";
+        if (in_array('open_hours', $data['displayOptions'])) {
+            foreach ($data['hours'] as $key => $time) {
+                $data['openHours'][] = "<span class='c-contact-banner__weekdays'>{$time['mod_contactbanner_weekdays']}:</span> {$time['mod_contactbanner_hours_from']} - {$time['mod_contactbanner_hours_to']}";
+            }
         }
 
         $data['abnormalHours'] = get_field($fieldNamespace . 'abnormalities_business_hours', $this->ID);
