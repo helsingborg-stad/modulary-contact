@@ -25,7 +25,7 @@ class ContactBanner extends \Modularity\Module
      * Data array
      * @return array $data
      */
-    public function data() : array
+    public function data(): array
     {
         $data = array();
         $fieldNamespace = 'mod_contactbanner_';
@@ -45,48 +45,48 @@ class ContactBanner extends \Modularity\Module
 
         $data['abnormalHours'] = get_field($fieldNamespace . 'abnormalities_business_hours', $this->ID);
 
-        if(empty($data['abnormalHours']['text'])) {
+        if (empty($data['abnormalHours']['text'])) {
             $data['abnormalHours'] = false;
         }
 
         $data['hideMainContent'] = !in_array('main_content', $data['displayOptions']);
         $data['hideBusinessHours'] = !in_array('open_hours', $data['displayOptions']);
-        $data['hideContentArea'] = $this->hideContentArea($data); 
-    
+        $data['hideContentArea'] = $this->hideContentArea($data);
+
         //Map module data to camel case vars
         $data['ctaList'] = get_field($fieldNamespace . 'cta_list', $this->ID);
 
         //Rename array items (cta)
-        \array_walk($data['ctaList'], function(&$item) use($fieldNamespace)  {
-            $item = $this->renameArrayKey($fieldNamespace . "cta_title", "title", $item); 
-            $item = $this->renameArrayKey($fieldNamespace . "cta_icon", "icon", $item); 
-            $item = $this->renameArrayKey($fieldNamespace . "cta_content", "content", $item); 
-            $item = $this->renameArrayKey($fieldNamespace . "cta_url", "url", $item); 
-            $item = $this->renameArrayKey($fieldNamespace . "cta_onclick", "onclick", $item); 
-            $item = $this->renameArrayKey($fieldNamespace . "cta_label", "label", $item); 
+        \array_walk($data['ctaList'], function (&$item) use ($fieldNamespace) {
+            $item = $this->renameArrayKey($fieldNamespace . "cta_title", "title", $item);
+            $item = $this->renameArrayKey($fieldNamespace . "cta_icon", "icon", $item);
+            $item = $this->renameArrayKey($fieldNamespace . "cta_content", "content", $item);
+            $item = $this->renameArrayKey($fieldNamespace . "cta_url", "url", $item);
+            $item = $this->renameArrayKey($fieldNamespace . "cta_onclick", "onclick", $item);
+            $item = $this->renameArrayKey($fieldNamespace . "cta_label", "label", $item);
         });
 
         //Format as objects
-        \array_walk($data['ctaList'], function(&$item) {
-            $item = (object) $item; 
+        \array_walk($data['ctaList'], function (&$item) {
+            $item = (object) $item;
         });
 
         //Add visual booleans for cta
-        \array_walk($data['ctaList'], function(&$item) {
+        \array_walk($data['ctaList'], function (&$item) {
 
             //Default value
-            $item->displayCta = true; 
+            $item->displayCta = true;
 
             //If label is missing, hide
-            if(empty($item->label)) {
-                $item->displayCta = false; 
+            if (empty($item->label)) {
+                $item->displayCta = false;
             }
 
-            if($item->displayCta && ($item->onclick == "" && $item->url == "")) {
-                $item->displayCta = false; 
+            if ($item->displayCta && ($item->onclick == "" && $item->url == "")) {
+                $item->displayCta = false;
             }
         });
-        
+
         return $data;
     }
 
@@ -96,30 +96,31 @@ class ContactBanner extends \Modularity\Module
      * @param array $data
      * @return void
      */
-    private function hideContentArea($data) {
-
-        if(!empty($data['displayOptions'])) {
-            return false; 
+    private function hideContentArea($data)
+    {
+        if (!empty($data['displayOptions'])) {
+            return false;
         }
 
-        return true; 
+        return true;
     }
 
     /**
      * Rename array item
      * @return array
      */
-    private function renameArrayKey($from, $to, $array) {
+    private function renameArrayKey($from, $to, $array)
+    {
         $array[$to] = $array[$from];
         unset($array[$from]);
-        return $array; 
-    } 
+        return $array;
+    }
 
     /**
      * Blade Template
      * @return string
      */
-    public function template() : string
+    public function template(): string
     {
         return "contact-banner.blade.php";
     }

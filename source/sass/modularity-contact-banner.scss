@@ -17,6 +17,7 @@ $base: var(--base, 8px);
 }
 
 .c-contact-banner {
+    margin-bottom: calc(#{$base} * 8);
 
     &__info-container {
         display: flex;
@@ -64,19 +65,19 @@ $base: var(--base, 8px);
         font-size: 14px;
     }
 
-    .c-group {
-        border-radius: var(--radius-lg, calc(#{$base} * 1.5));
-        overflow: hidden;
-        margin-bottom: calc(#{$base} * 8);
-    }
-
     .c-card {
         width: 35%;
         display: flex;
         flex-direction: column;
         box-shadow: none;
-        border-right: 1px solid  var(--color-lighter, #E5E5E5);
         border-radius: 0px;
+        background-color: transparent;
+        border: none;
+        border-right: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+    
+        &:last-child {
+            border-right: none;
+        }
     }
 
     .c-card__body {
