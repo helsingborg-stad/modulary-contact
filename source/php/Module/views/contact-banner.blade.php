@@ -117,7 +117,7 @@
                         </div>
 
                         @if($listItem->displayCta)
-                            <div class="c-card__footer c-contact-banner__footer u-padding--2">
+                            <div class="c-card__footer c-contact-banner__footer u-padding__x--4 u-padding__y--2">
                                 @button([
                                     'text' => $listItem->label,
                                     'color' => 'default',
