@@ -85,7 +85,7 @@
                             'u-box-shadow--0'
                         ],
                             'attributeList' => [
-                            'aria-labelledby' => 'mod-contactbanner-' . $id
+                            'aria-labelledby' => 'mod-contactbanner-' . $ID . '-' . $index
                         ],
                         'context' => 'contactbanner'
                     ])
@@ -104,7 +104,7 @@
                             @typography([
                                 'element' => 'h4',
                                 'variant' => 'h3',
-                                'id'      => 'mod-contactbanner-' . $id,
+                                'id'      => 'mod-contactbanner-' . $ID . '-' . $index,
                                 'classList' => ['u-margin__left--2']
                             ])
         
