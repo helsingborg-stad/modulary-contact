@@ -22,7 +22,7 @@
             "commands": [
                 "npm ci --no-progress --no-audit",
                 "npx --yes browserslist@latest --update-db",
-                "npm run build",
+                "npm run build"
             ],
             "removables": [
                 ".git",
