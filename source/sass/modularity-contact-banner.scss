@@ -122,6 +122,19 @@ $base: var(--base, 8px);
     }
 
     @media screen and (min-width: 896px) {
+        .c-card--flat ~ .c-paper {
+            filter: none;
+            background: none;
+    
+            .c-card {
+                border: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+                border-left: none;
+                
+                &:first-child {
+                    border-left: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+                }
+            }
+        }
 
         &__info-container {
             flex-direction: row;
