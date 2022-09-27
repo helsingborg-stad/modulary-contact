@@ -94,6 +94,11 @@ $base: var(--base, 8px);
             margin-top: 0px;
         }
     }
+
+    .c-card--flat ~ .c-paper {
+        filter: none;
+        background: none;
+    }
     
     @media screen and (max-width: 896px) {
         .c-group {

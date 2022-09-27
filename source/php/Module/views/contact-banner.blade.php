@@ -76,6 +76,8 @@
     @endif
 
     @if(isset($ctaList) && !empty($ctaList))
+        @card([])
+        @endcard
         @paper([])
             @group(['classList' => []])
                 @foreach ($ctaList as $index => $listItem)
