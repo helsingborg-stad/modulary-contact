@@ -98,6 +98,17 @@ $base: var(--base, 8px);
     .c-card--flat ~ .c-paper {
         filter: none;
         background: none;
+
+        .c-card {
+            border: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+            // border: 1px solid red;
+            // border-right: none;
+            
+            &:last-child {
+                // border-right: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+                // border-right: 1px solid green;
+            }
+        }
     }
     
     @media screen and (max-width: 896px) {
