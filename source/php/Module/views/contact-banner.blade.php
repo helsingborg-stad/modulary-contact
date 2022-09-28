@@ -91,7 +91,6 @@
                     ])
 
                         <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
-                            
                             @if($listItem->icon)
                                 @icon([
                                     'icon' => $listItem->icon, 
@@ -137,7 +136,6 @@
                                 @endif
                             </div>
                         @endif
-        
                     @endcard
                 @endforeach
             @endgroup
