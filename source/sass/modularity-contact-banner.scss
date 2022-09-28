@@ -76,23 +76,14 @@ $base: var(--base, 8px);
             border: none;
             border-right: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
         }
-        &:last-child, &:last-child .c-card--flat:last-child  {
+        &:last-child  {
             border-right: none;
         }
     }
 
     .c-card--flat {
-        .c-card--flat {
-            border:none;
-            margin-left: var(--border-width-divider, 1px);
-            margin-bottom: var(--border-width-divider, 1px);
-            outline: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5); 
-            &:first-child {
-                border-radius: var(--c-card-border-radius, var(--radius-lg, calc(var(--base, 8px)*1.5))) 0px 0px var(--c-card-border-radius, var(--radius-lg, calc(var(--base, 8px)*1.5)));
-            }
-            &:last-child {
-                border-radius: 0px var(--c-card-border-radius, var(--radius-lg, calc(var(--base, 8px)*1.5))) var(--c-card-border-radius, var(--radius-lg, calc(var(--base, 8px)*1.5))) 0px;
-            }
+        .c-group {
+            border: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
         }
          & > *:first-child {
                 filter: none; 
@@ -123,6 +114,14 @@ $base: var(--base, 8px);
 
         .c-card .c-card{
             width:100%;
+            &.c-card--flat {
+                border-right:none;
+                
+                .c-card__footer {
+                    border-bottom: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+                    border-radius: 0;
+                }
+            }
 
         }
     }
