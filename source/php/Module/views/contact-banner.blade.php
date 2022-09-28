@@ -77,73 +77,73 @@
 
     @if(isset($ctaList) && !empty($ctaList))
         @card([])
-        @endcard
-        @paper([])
-            @group(['classList' => []])
-                @foreach ($ctaList as $index => $listItem)
-                    @card([
-                        'classList' => [
-                            'card-item-'.$index,
-                            'u-box-shadow--0'
-                        ],
-                            'attributeList' => [
-                            'aria-labelledby' => 'mod-contactbanner-' . $ID . '-' . $index
-                        ],
-                        'context' => 'contactbanner'
-                    ])
+            @paper([])
+                @group(['classList' => []])
+                    @foreach ($ctaList as $index => $listItem)
+                        @card([
+                            'classList' => [
+                                'card-item-'.$index,
+                                'u-box-shadow--0'
+                            ],
+                                'attributeList' => [
+                                'aria-labelledby' => 'mod-contactbanner-' . $ID . '-' . $index
+                            ],
+                            'context' => 'contactbanner'
+                        ])
 
-                        <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
-                            
-                            @if($listItem->icon)
-                                @icon([
-                                    'icon' => $listItem->icon, 
-                                    'size' => 'md',
-                                    'color' => 'primary'
-                                ])
-                                @endicon
-                            @endif
-        
-                            @typography([
-                                'element' => 'h4',
-                                'variant' => 'h3',
-                                'id'      => 'mod-contactbanner-' . $ID . '-' . $index,
-                                'classList' => ['u-margin__left--2']
-                            ])
-        
-                            {{$listItem->title}}
-                            @endtypography
-                        </div>
-
-                        <div class="c-card__body u-padding__x--4 u-padding__top--0 u-padding__bottom--3">
-                            {!! $listItem->content !!}
-                        </div>
-
-                        @if($listItem->displayCta)
-                            <div class="c-card__footer c-contact-banner__footer u-padding__x--4 u-padding__y--2">
-                                @button([
-                                    'text' => $listItem->label,
-                                    'color' => 'default',
-                                    'style' => 'basic',
-                                    'icon' => 'arrow_forward',
-                                    'href' => !empty($listItem->url) ? $listItem->url : '',
-                                    'attributeList' => [
-                                        'onclick' => !empty($listItem->onclick) ? 'action'.$index.'()' : ''
-                                    ]
-                                ])
-                                @endbutton
-
-                                @if (!empty($listItem->onclick))
-                                <script>function action{!! $index !!}() {
-                                    {!! $listItem->onclick !!}
-                                }</script>
+                            <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
+                                
+                                @if($listItem->icon)
+                                    @icon([
+                                        'icon' => $listItem->icon, 
+                                        'size' => 'md',
+                                        'color' => 'primary'
+                                    ])
+                                    @endicon
                                 @endif
+            
+                                @typography([
+                                    'element' => 'h4',
+                                    'variant' => 'h3',
+                                    'id'      => 'mod-contactbanner-' . $ID . '-' . $index,
+                                    'classList' => ['u-margin__left--2']
+                                ])
+            
+                                {{$listItem->title}}
+                                @endtypography
                             </div>
-                        @endif
-        
-                    @endcard
-                @endforeach
-            @endgroup
-        @endpaper
+
+                            <div class="c-card__body u-padding__x--4 u-padding__top--0 u-padding__bottom--3">
+                                {!! $listItem->content !!}
+                            </div>
+
+                            @if($listItem->displayCta)
+                                <div class="c-card__footer c-contact-banner__footer u-padding__x--4 u-padding__y--2">
+                                    @button([
+                                        'text' => $listItem->label,
+                                        'color' => 'default',
+                                        'style' => 'basic',
+                                        'icon' => 'arrow_forward',
+                                        'href' => !empty($listItem->url) ? $listItem->url : '',
+                                        'attributeList' => [
+                                            'onclick' => !empty($listItem->onclick) ? 'action'.$index.'()' : ''
+                                        ]
+                                    ])
+                                    @endbutton
+
+                                    @if (!empty($listItem->onclick))
+                                    <script>function action{!! $index !!}() {
+                                        {!! $listItem->onclick !!}
+                                    }</script>
+                                    @endif
+                                </div>
+                            @endif
+            
+                        @endcard
+                    @endforeach
+                @endgroup
+            @endpaper
+        @endcard
     @endif
 
 </div>
