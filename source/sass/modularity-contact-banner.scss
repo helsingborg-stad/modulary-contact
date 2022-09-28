@@ -68,14 +68,21 @@ $base: var(--base, 8px);
     .c-card {
         display: flex;
         flex-direction: column;
-        box-shadow: none;
-        border-radius: 0px;
-        background-color: transparent;
         border: none;
-        border-right: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-    
+        flex: 1;
+        
         &:last-child {
             border-right: none;
+        }
+    }
+    
+    .c-group > .c-card {
+        background-color: transparent;
+        border-top: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+        border-radius: 0;
+
+        &:first-child {
+            border-top: none;
         }
     }
 
@@ -94,23 +101,23 @@ $base: var(--base, 8px);
         }
     }
 
-    
-    @media screen and (max-width: 896px) {
-        .c-card--flat > .c-group {
-            filter: none;
-            background: none;
-            border: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-    
-            .c-card {
-                border: none;
-                border-bottom: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+    // flat design
+    .c-card--flat > .c-group {
+        filter: none;
+        background: none;
+        border: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
 
-                &:last-child {
-                    border-bottom: none;
-                }
+        .c-card {
+            border: none;
+            border-bottom: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+
+            &:last-child {
+                border-bottom: none;
             }
         }
-
+    }
+    
+    @media screen and (max-width: 896px) {
         .c-group {
             display: block;
         }
@@ -121,6 +128,15 @@ $base: var(--base, 8px);
     }
 
     @media screen and (min-width: 896px) {
+        .c-group > .c-card {
+            border-right: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+            border-top: none;
+
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+
         .c-card--flat > .c-group {
             filter: none;
             background: none;
@@ -129,7 +145,6 @@ $base: var(--base, 8px);
             .c-card {
                 border: none;
                 border-left: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-                flex: 1;
 
                 &:first-child {
                     border-left: none;
