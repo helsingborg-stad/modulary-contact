@@ -66,18 +66,37 @@ $base: var(--base, 8px);
     }
 
     .c-card {
-        width: 35%;
-        display: flex;
-        flex-direction: column;
-        box-shadow: none;
-        border-radius: 0px;
-        background-color: transparent;
-        border: none;
-        border-right: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-    
-        &:last-child {
+        .c-card {
+            display: flex;
+            flex-direction: column;
+            box-shadow: none;
+            width: 35%;
+            border-radius: 0px;
+            background-color: transparent;
+            border: none;
+            border-right: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
+        }
+        &:last-child, &:last-child .c-card--flat:last-child  {
             border-right: none;
         }
+    }
+
+    .c-card--flat {
+        .c-card--flat {
+            border:none;
+            margin-left: var(--border-width-divider, 1px);
+            margin-bottom: var(--border-width-divider, 1px);
+            outline: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5); 
+            &:first-child {
+                border-radius: var(--c-card-border-radius, var(--radius-lg, calc(var(--base, 8px)*1.5))) 0px 0px var(--c-card-border-radius, var(--radius-lg, calc(var(--base, 8px)*1.5)));
+            }
+            &:last-child {
+                border-radius: 0px var(--c-card-border-radius, var(--radius-lg, calc(var(--base, 8px)*1.5))) var(--c-card-border-radius, var(--radius-lg, calc(var(--base, 8px)*1.5))) 0px;
+            }
+        }
+         & > *:first-child {
+                filter: none; 
+        }  
     }
 
     .c-card__body {
@@ -97,46 +116,18 @@ $base: var(--base, 8px);
 
     
     @media screen and (max-width: 896px) {
-        .c-card--flat ~ .c-paper {
-            filter: none;
-            background: none;
-            border: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-    
-            .c-card {
-                border: none;
-                border-bottom: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-
-                &:last-child {
-                    border-bottom: none;
-                }
-            }
-        }
 
         .c-group {
             display: block;
         }
 
-        .c-card {
+        .c-card .c-card{
             width:100%;
 
         }
     }
 
     @media screen and (min-width: 896px) {
-        .c-card--flat ~ .c-paper {
-            filter: none;
-            background: none;
-            border: var(--border-width-divider, 1px) solid var(--color-border-divider, #E5E5E5);
-    
-            .c-card {
-                border: none;
-                border-left: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-                
-                &:first-child {
-                    border-left: none;
-                }
-            }
-        }
 
         &__info-container {
             flex-direction: row;
