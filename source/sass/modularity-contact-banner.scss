@@ -112,7 +112,7 @@ $base: var(--base, 8px);
             display: block;
         }
 
-        .c-card {
+        .c-card .c-card {
             width:100%;
             &.c-card--flat {
                 border-right:none;
