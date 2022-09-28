@@ -76,7 +76,7 @@
     @endif
 
     @if(isset($ctaList) && !empty($ctaList))
-        @paper([])
+        @card([])
             @group(['classList' => []])
                 @foreach ($ctaList as $index => $listItem)
                     @card([
@@ -141,7 +141,7 @@
                     @endcard
                 @endforeach
             @endgroup
-        @endpaper
+        @endcard
     @endif
 
 </div>
