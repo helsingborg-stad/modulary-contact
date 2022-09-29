@@ -5,13 +5,10 @@ $base: var(--base, 8px);
     max-width: 1248px;
     margin: 0 auto;
 
-    .c-group {
-        margin: 0 calc(#{$base} * 7);
-    }
-
-    @media screen and (min-width: 896px) {
-        .c-group {
-            margin: 0 calc(#{$base} * 3);
+    .c-card {
+        margin: 0 calc(var(--base, 8px) * 4);
+        .c-group .c-card {
+            margin:0;
         }
     }
 }
