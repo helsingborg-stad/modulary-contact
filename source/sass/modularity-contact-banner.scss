@@ -25,7 +25,6 @@ $base: var(--base, 8px);
 
     &__title {
         font-size: calc(#{$base} * 4.5);
-        font-weight: 900;
         color: var(--color-mono-darkest, #3D3D3D);
         &:first-child {
             margin-top: -0.2em;
@@ -33,7 +32,6 @@ $base: var(--base, 8px);
     }
 
     &__text {
-        font-weight: 500;
         color: var(--color-mono-darkest, #3D3D3D);
     }
 
@@ -44,10 +42,10 @@ $base: var(--base, 8px);
             margin-top: 0;
         }
     }
-
-    &__hours-title,
+    
     &__weekdays {
-        font-weight: 700;
+        font-weight: var(--font-weight-bold);
+        font-family: var(--font-family-bold);
     }
 
     &__hours-title {
@@ -88,7 +86,6 @@ $base: var(--base, 8px);
 
     .c-card__body {
         flex-grow: 1;
-        font-weight: 500;
         color: var(--color-darkest, #3d3d3d);
     }
 
@@ -148,7 +145,6 @@ $base: var(--base, 8px);
     .c-card__header {
         h4 {
             font-size: 24px;
-            font-weight: 700;
         }
 
         .c-icon {
