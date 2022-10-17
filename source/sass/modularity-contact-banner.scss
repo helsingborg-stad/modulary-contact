@@ -76,9 +76,6 @@ $base: var(--base, 8px);
     }
 
     .c-card--flat {
-        .c-group {
-            border: var(--border-width-divider, 1px) solid  var(--color-border-divider, #E5E5E5);
-        }
         & > *:first-child {
             filter: none; 
         }  
