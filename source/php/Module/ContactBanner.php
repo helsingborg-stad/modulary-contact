@@ -86,7 +86,7 @@ class ContactBanner extends \Modularity\Module
                 $item->displayCta = false;
             }
         });
-
+        
         return $data;
     }
 

@@ -1,16 +1,16 @@
 <div id="contact" class="c-contact-banner u-print-display--none">
 
-    @if(!$hideContentArea || (!$hideTitle && !empty($post_title)))
+    @if(!$hideContentArea || (!$hideTitle && !empty($postTitle)))
         <div class="c-contact-banner__info-container">
             <div class="c-contact-banner__content">
-                @if (!$hideTitle && !empty($post_title))
+                @if (!$hideTitle && !empty($postTitle))
                     @typography([
                         "element" => "h2",
                         "classList" => [
                             "c-contact-banner__title"
                         ]
                     ])
-                        {!! apply_filters('the_title', $post_title) !!}
+                        {!! apply_filters('the_title', $postTitle) !!}
                     @endtypography
                 @endif
 
