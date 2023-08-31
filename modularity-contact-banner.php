@@ -24,14 +24,11 @@ define('MODULARITYCONTACTBANNER_MODULE_PATH', MODULARITYCONTACTBANNER_PATH . 'so
 
 load_plugin_textdomain('modularity-contact-banner', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
-require_once MODULARITYCONTACTBANNER_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
+// Autoload from plugin
+if (file_exists(MODULARITYCONTACTBANNER_PATH . 'vendor/autoload.php')) {
+    require_once MODULARITYCONTACTBANNER_PATH . 'vendor/autoload.php';
+}
 require_once MODULARITYCONTACTBANNER_PATH . 'Public.php';
-
-// Instantiate and register the autoloader
-$loader = new ModularityContactBanner\Vendor\Psr4ClassLoader();
-$loader->addPrefix('ModularityContactBanner', MODULARITYCONTACTBANNER_PATH);
-$loader->addPrefix('ModularityContactBanner', MODULARITYCONTACTBANNER_PATH . 'source/php/');
-$loader->register();
 
 // Modularity 3.0 ready - ViewPath for Component library
 add_filter('/Modularity/externalViewPath', function ($arr) {
