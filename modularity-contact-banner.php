@@ -4,7 +4,7 @@
  * Plugin Name:       Modularity Contact Banner
  * Plugin URI:        https://github.com/helsingborg-stad/modularity-contact
  * Description:       Modularity Contact Banner
- * Version:           1.0.0
+ * Version: 2.0.0
  * Author:            Sebastian Thulin
  * Author URI:        https://github.com/helsingborg-stad
  * License:           MIT
