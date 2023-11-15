@@ -34,7 +34,8 @@
 
                     <!-- Header for business hours -->
                     @typography([
-                        "element" => "h4",
+                        "element" => "h3",
+                        "variant" => "h4",
                         "classList" => [
                             "c-contact-banner__hours-title"
                         ]
@@ -102,7 +103,7 @@
                             @endif
         
                             @typography([
-                                'element' => 'h4',
+                                'element' => 'h3',
                                 'variant' => 'h3',
                                 'id'      => 'mod-contactbanner-' . $ID . '-' . $index,
                                 'classList' => ['u-margin__left--2']
