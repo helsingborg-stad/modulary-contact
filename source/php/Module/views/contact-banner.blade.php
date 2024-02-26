@@ -95,7 +95,7 @@
                             
                             @if($listItem->icon)
                                 @icon([
-                                    'icon' => $listItem->icon, 
+                                    'icon' => trim($listItem->icon), 
                                     'size' => 'md',
                                     'color' => 'primary'
                                 ])
