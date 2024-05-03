@@ -58,7 +58,10 @@
                     @if($abnormalHours)
                         @link([
                             'href' => $abnormalHours['link'], 
-                            'keepContent' => true
+                            'keepContent' => true,
+                            'classList' => [
+                                'u-display--block'
+                            ]
                         ])
                             @typography([
                                     "element" => "p",
