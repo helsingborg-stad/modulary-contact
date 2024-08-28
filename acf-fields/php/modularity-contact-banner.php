@@ -1,7 +1,9 @@
 <?php 
 
-if (function_exists('acf_add_local_field_group')) {
-    acf_add_local_field_group(array(
+
+if (function_exists('acf_add_local_field_group')) {
+
+    acf_add_local_field_group(array(
     'key' => 'group_5e1d8f163f200',
     'title' => __('Modularity Contact Banner', 'modularity-contact-banner'),
     'fields' => array(
@@ -9,6 +11,7 @@
             'key' => 'field_609a4bd6da499',
             'label' => __('Display Options', 'modularity-contact-banner'),
             'name' => 'mod_contactbanner_display_options',
+            'aria-label' => '',
             'type' => 'checkbox',
             'instructions' => '',
             'required' => 0,
@@ -29,11 +32,13 @@
             'toggle' => 0,
             'return_format' => 'value',
             'save_custom' => 0,
+            'custom_choice_button_text' => 'Add new choice',
         ),
         1 => array(
             'key' => 'field_609a423160be0',
             'label' => __('Main content', 'modularity-contact-banner'),
             'name' => 'mod_contactbanner_main_content',
+            'aria-label' => '',
             'type' => 'textarea',
             'instructions' => '',
             'required' => 0,
@@ -56,11 +61,13 @@
             'maxlength' => '',
             'rows' => '',
             'new_lines' => '',
+            'acfe_textarea_code' => 0,
         ),
         2 => array(
             'key' => 'field_609a44af3c871',
             'label' => __('Header - Business hours', 'modularity-contact-banner'),
             'name' => 'mod_contactbanner_header_business_hours',
+            'aria-label' => '',
             'type' => 'text',
             'instructions' => __('Enter business hours header', 'modularity-contact-banner'),
             'required' => 0,
@@ -88,6 +95,7 @@
             'key' => 'field_609a482679912',
             'label' => __('Hours list', 'modularity-contact-banner'),
             'name' => 'mod_contactbanner_hours_list',
+            'aria-label' => '',
             'type' => 'repeater',
             'instructions' => '',
             'required' => 0,
@@ -109,12 +117,15 @@
             'min' => 0,
             'max' => 0,
             'layout' => 'row',
-            'button_label' => '',
+            'button_label' => __('Add Row', 'modularity-contact-banner'),
+            'rows_per_page' => 20,
+            'acfe_repeater_stylised_button' => 0,
             'sub_fields' => array(
                 0 => array(
                     'key' => 'field_609a488179913',
                     'label' => __('Weekdays', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_weekdays',
+                    'aria-label' => '',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -129,11 +140,13 @@
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => '',
+                    'parent_repeater' => 'field_609a482679912',
                 ),
                 1 => array(
                     'key' => 'field_609a488d79914',
                     'label' => __('Hours from', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_hours_from',
+                    'aria-label' => '',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -148,11 +161,13 @@
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => 5,
+                    'parent_repeater' => 'field_609a482679912',
                 ),
                 2 => array(
                     'key' => 'field_609a48db79915',
                     'label' => __('Hours to', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_hours_to',
+                    'aria-label' => '',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -167,6 +182,7 @@
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => 5,
+                    'parent_repeater' => 'field_609a482679912',
                 ),
             ),
         ),
@@ -174,6 +190,7 @@
             'key' => 'field_609a8a4e0fce9',
             'label' => __('Abnormalities - Business hours', 'modularity-contact-banner'),
             'name' => 'mod_contactbanner_abnormalities_business_hours',
+            'aria-label' => '',
             'type' => 'group',
             'instructions' => '',
             'required' => 0,
@@ -197,6 +214,7 @@
                     'key' => 'field_609a8aa20fcea',
                     'label' => __('Text', 'modularity-contact-banner'),
                     'name' => 'text',
+                    'aria-label' => '',
                     'type' => 'text',
                     'instructions' => __('Leave empty if you don\'t want to use this option', 'modularity-contact-banner'),
                     'required' => 0,
@@ -216,6 +234,7 @@
                     'key' => 'field_609a8ac30fceb',
                     'label' => __('Link', 'modularity-contact-banner'),
                     'name' => 'link',
+                    'aria-label' => '',
                     'type' => 'url',
                     'instructions' => __('Leave empty if you don\'t want to use this option', 'modularity-contact-banner'),
                     'required' => 0,
@@ -236,11 +255,17 @@
                     'placeholder' => '',
                 ),
             ),
+            'acfe_seamless_style' => 0,
+            'acfe_group_modal' => 0,
+            'acfe_group_modal_close' => 0,
+            'acfe_group_modal_button' => '',
+            'acfe_group_modal_size' => 'large',
         ),
         5 => array(
             'key' => 'field_5e1ed6113cdb8',
             'label' => __('Call to action icon list', 'modularity-contact-banner'),
             'name' => 'mod_contactbanner_cta_list',
+            'aria-label' => '',
             'type' => 'repeater',
             'instructions' => '',
             'required' => 0,
@@ -255,11 +280,14 @@
             'max' => 4,
             'layout' => 'block',
             'button_label' => __('Add item', 'modularity-contact-banner'),
+            'rows_per_page' => 20,
+            'acfe_repeater_stylised_button' => 0,
             'sub_fields' => array(
                 0 => array(
                     'key' => 'field_5e1ed6a13cdb9',
                     'label' => __('Title', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_cta_title',
+                    'aria-label' => '',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -274,16 +302,15 @@
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => '',
+                    'parent_repeater' => 'field_5e1ed6113cdb8',
                 ),
                 1 => array(
-                    'key' => 'field_5e1ed6cd3cdba',
+                    'key' => 'field_66cf17d72c91e',
                     'label' => __('Icon', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_cta_icon',
-                    'type' => 'text',
-                    'instructions' => __('You can find the icons we use at following address:
-http://v2.styleguide.helsingborg.se/icons
-
-Just click the icon to copy or copy the icon name and paste the icon name here.', 'modularity-contact-banner'),
+                    'aria-label' => '',
+                    'type' => 'select',
+                    'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
@@ -291,16 +318,24 @@ Just click the icon to copy or copy the icon name and paste the icon name here.'
                         'class' => '',
                         'id' => '',
                     ),
-                    'default_value' => '',
+                    'choices' => array(
+                    ),
+                    'default_value' => false,
+                    'return_format' => 'value',
+                    'multiple' => 0,
+                    'allow_custom' => 0,
+                    'search_placeholder' => '',
+                    'allow_null' => 0,
+                    'ui' => 1,
+                    'ajax' => 0,
                     'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
+                    'parent_repeater' => 'field_5e1ed6113cdb8',
                 ),
                 2 => array(
                     'key' => 'field_5e1ed7603cdbb',
                     'label' => __('Content', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_cta_content',
+                    'aria-label' => '',
                     'type' => 'wysiwyg',
                     'instructions' => '',
                     'required' => 0,
@@ -315,11 +350,13 @@ Just click the icon to copy or copy the icon name and paste the icon name here.'
                     'toolbar' => 'full',
                     'media_upload' => 1,
                     'delay' => 0,
+                    'parent_repeater' => 'field_5e1ed6113cdb8',
                 ),
                 3 => array(
                     'key' => 'field_5e1ed76b3cdbc',
                     'label' => __('Label - Call to action', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_cta_label',
+                    'aria-label' => '',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -334,11 +371,13 @@ Just click the icon to copy or copy the icon name and paste the icon name here.'
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => '',
+                    'parent_repeater' => 'field_5e1ed6113cdb8',
                 ),
                 4 => array(
                     'key' => 'field_5e1ed8323cdbd',
                     'label' => __('URL - Call to action', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_cta_url',
+                    'aria-label' => '',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -353,11 +392,13 @@ Just click the icon to copy or copy the icon name and paste the icon name here.'
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => '',
+                    'parent_repeater' => 'field_5e1ed6113cdb8',
                 ),
                 5 => array(
                     'key' => 'field_5e1ee12b3cdbe',
                     'label' => __('onClick - Call to action', 'modularity-contact-banner'),
                     'name' => 'mod_contactbanner_cta_onclick',
+                    'aria-label' => '',
                     'type' => 'text',
                     'instructions' => __('Enter javascript', 'modularity-contact-banner'),
                     'required' => 0,
@@ -372,6 +413,7 @@ Just click the icon to copy or copy the icon name and paste the icon name here.'
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => '',
+                    'parent_repeater' => 'field_5e1ed6113cdb8',
                 ),
             ),
         ),
@@ -384,6 +426,13 @@ Just click the icon to copy or copy the icon name and paste the icon name here.'
                 'value' => 'mod-contact-banner',
             ),
         ),
+        1 => array(
+            0 => array(
+                'param' => 'block',
+                'operator' => '==',
+                'value' => 'acf/contact-banner',
+            ),
+        ),
     ),
     'menu_order' => 0,
     'position' => 'normal',
@@ -393,5 +442,12 @@ Just click the icon to copy or copy the icon name and paste the icon name here.'
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
+    'show_in_rest' => 0,
+    'acfe_display_title' => '',
+    'acfe_autosync' => '',
+    'acfe_form' => 0,
+    'acfe_meta' => '',
+    'acfe_note' => '',
 ));
-}
+
+}
