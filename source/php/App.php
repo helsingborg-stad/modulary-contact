@@ -7,6 +7,14 @@ class App
     public function __construct()
     {
         add_action('plugins_loaded', array($this, 'registerModule'));
+        add_filter('Municipio/Admin/Acf/PrefillIconChoice', array($this, 'addFieldNameToPrefillList'));
+    }
+
+    public function addFieldNameToPrefillList(array $items) 
+    {
+        $items[] = 'mod_contactbanner_cta_icon';
+
+        return $items;
     }
 
     /**
