@@ -1,5 +1,5 @@
 {
-    "name": "modularity-contact-banner",
+    "name": "@helsingborg-stad/modularity-contact-banner",
     "version": "3.2.0",
     "description": "Contact Banner",
     "main": "",
@@ -23,6 +23,7 @@
         "> 1%",
         "not dead"
     ],
+    "files": ["dist/"],
     "devDependencies": {
         "@babel/core": "^7.17.2",
         "@babel/plugin-proposal-class-properties": "^7.16.7",
